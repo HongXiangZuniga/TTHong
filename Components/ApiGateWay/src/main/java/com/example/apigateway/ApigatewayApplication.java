@@ -16,8 +16,17 @@ public class ApigatewayApplication {
 	public RouteLocator myRoutes1(RouteLocatorBuilder builder) {
 		return builder.routes()
 				.route(p -> p
-						.path("/Productos")
-						.uri("http://172.17.0.1:8001/"))
+						.path("/")
+						.uri("http://127.0.0.1:8022/"))
+				.build();
+
+	}
+	@Bean
+	public RouteLocator myRoutes2(RouteLocatorBuilder builder) {
+		return builder.routes()
+				.route(p -> p
+						.path("/ping")
+						.uri("http://127.0.0.1:8022/"))
 				.build();
 
 	}
