@@ -21,17 +21,5 @@ public class ApigatewayApplication {
 				.build();
 
 	}
-	@Bean
-	public RouteLocator myRoutes2(RouteLocatorBuilder builder) {
-		return builder.routes()
-				.route(p -> p
-						.path("/Clientes")
-						.uri("http://172.17.0.1:8002/"))
-				.build();
-
-	}
-
-
-
 
 }
