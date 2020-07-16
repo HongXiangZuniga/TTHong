@@ -11,17 +11,17 @@ public class Model extends RepresentationModel<Model>{
     private  String state;
 
     @JsonCreator
-    public Model (@JsonProperty("state")String state){
+    public Model (@JsonProperty("id")String id,
+                  @JsonProperty("state")String state,
+                  @JsonProperty("model")String model){
+        this.id = id;
+        this.model = model;
         this.state = state;
+
+
     }
     public String getContent() {
 		return state;
     }
-    
-    public Model(String state,String id,String model){
-        this.model = model;
-        this.state = state;
-        this.id = id;
-    }
-    
+
 }

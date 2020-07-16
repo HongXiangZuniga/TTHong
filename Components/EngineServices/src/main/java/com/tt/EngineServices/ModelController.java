@@ -27,11 +27,10 @@ public class ModelController {
     
     @RequestMapping("/model")
 	public HttpEntity<Model> model(
-		@RequestParam(value = "state", defaultValue = "vacio") String name,@RequestBody String body) throws JSONException {
+		@RequestBody String body) throws JSONException {
 		JSONObject js = new JSONObject(body);
-		repository.save(new Model(js.getString("state"), js.getString("id"), js.getString("model")));
-		Model model = new Model(String.format(TEMPLATE, name));
-		model.add(linkTo(methodOn(ModelController.class).model(name, body)).withSelfRel());
+		Model model = new Model( js.getString("id"),js.getString("state"), js.getString("model"));
+		repository.save(model);
 
 		return new ResponseEntity<>(model, HttpStatus.OK);
 	}
