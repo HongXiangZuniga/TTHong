@@ -7,7 +7,7 @@ import toEngineServices as toEngineServices
 def main():
     content = request.get_json() #Return type dict https://docs.python.org/3/tutorial/datastructures.html
     toEngineServices.send(content)
-    return "hola"
+    return content
 
 
 @app.route('/ping') #Route of test
