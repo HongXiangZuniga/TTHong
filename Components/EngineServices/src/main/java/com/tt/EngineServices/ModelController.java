@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ModelController {
 	@Autowired
   	private ModelRepository repository;
+	private Rules rules = new Rules();
 
 
     private static final String TEMPLATE = "Hello, %s!";
@@ -29,9 +30,13 @@ public class ModelController {
 	public HttpEntity<Model> model(
 		@RequestBody String body) throws JSONException {
 		JSONObject js = new JSONObject(body);
-		Model model = new Model( js.getString("id"),js.getString("state"), js.getString("model"));
-		repository.save(model);
-
-		return new ResponseEntity<>(model, HttpStatus.OK);
+		if(rules.next(js.getString("state")).equals("error")){
+			return new ResponseEntity<>(new Model("eror","error","error"),HttpStatus.EXPECTATION_FAILED);
+		}
+		else {
+			Model model = new Model(js.getString("id"), js.getString("state"), js.getString("model"));
+			repository.save(model);
+			return new ResponseEntity<>(model, HttpStatus.OK);
+		}
 	}
 }

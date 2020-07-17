@@ -9,6 +9,7 @@ public class Model extends RepresentationModel<Model>{
     private  String id;
     private  String model;
     private  String state;
+    private Rules rules = new Rules();
 
     @JsonCreator
     public Model (@JsonProperty("id")String id,
@@ -21,7 +22,7 @@ public class Model extends RepresentationModel<Model>{
 
     }
     public String getContent() {
-		return state;
+       return rules.next(this.state);
     }
 
 }
