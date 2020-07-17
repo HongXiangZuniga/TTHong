@@ -5,13 +5,10 @@ import toTransformator as toTransformator
 
 @app.route('/') #Main Route
 def main():
-    content = request.get_json() #Return type dict https://docs.python.org/3/tutorial/datastructures.html
-    model = content["model"]
-    toTransformator.send(model)
-    return "ok"
-
-
-
+    content = request.get_json() 
+    print(toTransformator.send(content))
+    return toTransformator.send(content)
+   
 
 if (__name__ == "__main__"):
     app.run(debug=True, port=8042)

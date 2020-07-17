@@ -4,6 +4,7 @@ public class Rules {
 
 
     public String next(String state){
+        System.out.println(state);
         if(state.equals("vanila")){
             return "validator";
         }
