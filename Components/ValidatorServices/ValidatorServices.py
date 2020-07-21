@@ -6,13 +6,12 @@ import Validator as validator
 @app.route('/') #Main Route
 def main():
     content = request.get_json()
-    result = validator.run(content)
-    if(result == True):
-        content['state']="validator"
-        return content
-    else:
-        return "error"
+    print(content)
+    content = validator.run(content)
+    print(content)
+    return content
 
+ 
 
 @app.route('/ping') #Route of test
 def ping():

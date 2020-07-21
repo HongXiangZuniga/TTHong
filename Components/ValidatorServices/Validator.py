@@ -1,5 +1,6 @@
 def run(data):
-    if(data['state']=='vanila'):
-        return True
-    else:
-        return False
+    print("flag")
+    if(data.get("errors").get("error")==None):
+        data["errors"]["check"]="true"
+    return data
+   
