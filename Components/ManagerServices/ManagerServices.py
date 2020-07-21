@@ -16,15 +16,32 @@ def main():
         result = toEngineServices.send(content)
         error = result.get("error")
         nextstep = result.get("next")
+
+
         if(error!=None):
             return error
         if(nextstep=="validator"):
             response = toValidatorServices.send(content)
             check = response.get("errors").get("check")
+            content["errors"] = response["errors"]
             if(check!="true"):
                 return response.get("errors")
-        return response
+            else:
+                result = toEngineServices.send(response)
 
+
+
+        result = toEngineServices.send(content)
+        error = result.get("error")
+        nextstep = result.get("next")
+        if(nextstep=="transformator"):
+            print("jeje")
+
+
+
+
+
+        return content
 
 if (__name__ == "__main__"):
     app.run(debug=True, port=8022)
