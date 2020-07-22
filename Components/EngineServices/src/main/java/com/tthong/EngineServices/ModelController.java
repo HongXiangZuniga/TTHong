@@ -53,6 +53,9 @@ public class ModelController {
                 model = repository.findByid(js.getString("id")).get(0);
                 if (model.getState().equals("Validated")) {
                     map.put("next", "transformator");
+                    if(js3.getString("name").equals("pro")){
+                        repository.save(new Model(js.getString("id"),"Transformated",js.getString("errors"),js.getString("model")));
+                    }
                 }
 
 
@@ -60,6 +63,8 @@ public class ModelController {
                 if (model.getState().equals("Transformated")) {
                     map.put("next", "finish");
                 }
+
+                
                 
                 map.put("model", model.getModel());
                 return map;

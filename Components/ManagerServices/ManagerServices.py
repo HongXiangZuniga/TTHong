@@ -21,6 +21,7 @@ def main():
         if(error!=None):
             return error
         if(nextstep=="validator"):
+            print("Entrado al validador")
             response = toValidatorServices.send(content)
             check = response.get("errors").get("check")
             content["errors"] = response["errors"]
@@ -35,12 +36,16 @@ def main():
         error = result.get("error")
         nextstep = result.get("next")
         if(nextstep=="transformator"):
-            print("jeje")
+            content = toTransformator.send(content)
+        
 
 
-
-
-
+        result = toEngineServices.send(content)
+        error = result.get("error")
+        nextstep = result.get("next")
+        if(nextstep=="finish"):
+            fin = {"status":"finish"}
+            content.update(fin)
         return content
 
 if (__name__ == "__main__"):
