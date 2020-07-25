@@ -51,7 +51,7 @@ public class Model {
     public Model(){
         this.state="Vanila";
         this.errors = "{'check':'False'}";
-        this.model = null;
+        this.model ="{'name':'basic','model':' '}";
 
     }
     public Model(String id,String state,String errors,String model){

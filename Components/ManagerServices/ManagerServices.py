@@ -1,4 +1,7 @@
 from flask import Flask, jsonify,request
+import json as json
+from collections import OrderedDict
+
 app=Flask(__name__)
 
 import toEngineServices as toEngineServices
@@ -11,7 +14,10 @@ def main():
     content = request.get_json() #Return type dict https://docs.python.org/3/tutorial/datastructures.html
     if(content.get("id")==None): #Return type dict https://docs.python.org/3/tutorial/datastructures.html
         result = toEngineServicesVanila.send(content)
-        return result.get("id")
+        result.pop("pointAcess")
+        result = '{'+'"id":'+'"'+result["id"]+'"'+','+'"model":{'+result["model"][1:len(result["model"])-1]+'}'+','+'"errors":{'+result["errors"][1:len(result["errors"])-1]+'}'+'}'
+        result = result.replace("'",'"')
+        return json.loads(result,object_pairs_hook=OrderedDict)
     else:
         result = toEngineServices.send(content)
         error = result.get("error")

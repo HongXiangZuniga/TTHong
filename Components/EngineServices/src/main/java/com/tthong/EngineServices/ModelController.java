@@ -36,6 +36,8 @@ public class ModelController {
                 final String link = entityLinks.linkForItemResource(model.getClass(), model.getId()).toString();
                 map.put("pointAcess", link);
                 map.put("id", model.getId());
+                map.put("errors", model.getErrors());
+                map.put("model", model.getModel());
                 return map;
             } else {
                 JSONObject js2 = new JSONObject(js.getString("errors"));
