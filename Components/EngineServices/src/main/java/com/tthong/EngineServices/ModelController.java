@@ -40,6 +40,7 @@ public class ModelController {
         //Cargado de datos del JSON de Entrada.
         try {
             Steps steps = new Steps();
+            String state;
             String next;
             HashMap<String, String> map = new HashMap<>();
             JSONObject jsbody = new JSONObject(body); // Body del Json
@@ -59,11 +60,19 @@ public class ModelController {
                 return map;
             }
 
-            next =steps.next(repository.findByid(jsbody.getString("id")).get(0).now());
+            //Se extrae el estado y el actual
+            state =repository.findByid(jsbody.getString("id")).get(0).now();
+            next = steps.next(state);
             map.put("next",next);
 
+
+            //Se guarda la actualizacion 
             Model model2 = json2Model.transform(jsbody);
+            model2.setState(state);
             repository.save(model2);
+
+
+            //Se entrega el retorno
             return map;
 
 

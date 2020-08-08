@@ -17,7 +17,9 @@ public class Model {
     public OOMModel OOMModel;
 
 
-
+    public void setState(String state){
+        this.state = state;
+    }
 
     public String now(){
         return this.state;
