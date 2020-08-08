@@ -1,0 +1,42 @@
+{
+    "id":"id",
+
+
+    "model_i":{
+        "date":"date",
+        "validator":[],
+        "model":{
+
+        }
+    },
+
+
+    "model_AC":{
+        "date":"date",
+        "validator":[],
+        "model":{
+
+        }
+    },
+
+    "model_OOM":{
+        "date":"date",
+        "validator":[],
+        "model":{
+
+        }
+    },
+
+    
+    "traI2AC":{
+    "relationship":[]
+    
+    },
+
+    "traAC2OM":{
+    "relationship":[]
+    }
+
+
+
+}
