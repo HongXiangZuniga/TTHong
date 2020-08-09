@@ -34,7 +34,7 @@ public class ModelController {
 
 
 
-    @RequestMapping("/model")
+    @RequestMapping("/Model")
     public Map<String, String> model(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
 
         //Cargado de datos del JSON de Entrada.

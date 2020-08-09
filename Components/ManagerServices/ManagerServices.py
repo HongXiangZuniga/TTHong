@@ -1,22 +1,20 @@
 from flask import Flask,request
 app = Flask(__name__)
 
+import GoTo
 
 @app.route('/')
 def hello():
     try:
         content = request.get_json()
-
         #Caso donde Inicial
         if(len(content)==0):
-            return "Te mandare a iniciar"
-        else:
-            return "Entrando al proceso"
+            return (GoTo.run(content,"EngineInit"))
+        next = GoTo.run(content,"EngineServices")
+        return next
 
-
-
-    except expression as identifier:
-        return "Hello World!"
+    except Exception as e:
+        return str(e)
 
 
 
