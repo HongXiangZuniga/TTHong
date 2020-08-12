@@ -1,5 +1,5 @@
 package com.tthong.OOMModel;
 
-public class SubOOMModel {
+public class OOMModel {
     public String model;
 }

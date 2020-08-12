@@ -5,9 +5,12 @@ import requests
 
 def run(content,ubication):
     links = Ubications.links();
-    url = links[ubication]
-    send = requests.get(url,json=content)
-    return send.json()
+    if(ubication != "Finish"):
+        url = links[ubication]
+        send = requests.get(url,json=content)
+        return send.json()
+    else:
+        return content
     
     
 

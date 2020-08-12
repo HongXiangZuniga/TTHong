@@ -6,9 +6,9 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
-@RepositoryRestResource(collectionResourceRel = "model", path = "model")
-public interface ModelRepository extends MongoRepository<Model, String> {
-    public List<Model> findByid(@Param("id") String id);
+@RepositoryRestResource(collectionResourceRel = "project", path = "project")
+public interface ProjectRepository extends MongoRepository<Project, String> {
+    public List<Project> findByid(@Param("id") String id);
 
 
 }

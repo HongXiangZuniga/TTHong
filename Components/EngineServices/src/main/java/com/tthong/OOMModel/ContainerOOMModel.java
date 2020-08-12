@@ -2,12 +2,12 @@ package com.tthong.OOMModel;
 
 import com.tthong.GeneralModel.CommonModel;
 
-public class OOMModel extends CommonModel {
+public class ContainerOOMModel extends CommonModel {
 
-    public SubOOMModel model;
+    public OOMModel model;
 
 
-    public OOMModel() {
-        this.model = new SubOOMModel();
+    public ContainerOOMModel() {
+        this.model = new OOMModel();
     }
 }

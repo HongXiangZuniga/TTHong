@@ -2,22 +2,22 @@ package com.tthong.ACModel;
 
 import com.tthong.GeneralModel.CommonModel;
 
-public class ACModel extends CommonModel {
+public class ContainerACModel extends CommonModel {
 
-    public SubACModel model = new SubACModel();
+    public ACModel model = new ACModel();
 
-    public SubACModel getModel() {
+    public ACModel getModel() {
         return model;
     }
 
-    public void setModel(SubACModel model) {
+    public void setModel(ACModel model) {
         this.model = model;
     }
 
-    public ACModel() {
+    public ContainerACModel() {
 
     }
-    public ACModel(SubACModel model) {
+    public ContainerACModel(ACModel model) {
         this.model = model;
     }
 }

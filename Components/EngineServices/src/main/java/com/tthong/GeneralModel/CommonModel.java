@@ -3,7 +3,7 @@ package com.tthong.GeneralModel;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class GeneralModel {
+public class CommonModel {
 
     private String date;
     private ArrayList<String> validator;
@@ -24,14 +24,14 @@ public class GeneralModel {
         this.validator = validator;
     }
 
-    public GeneralModel(){
+    public CommonModel(){
         Date date = new Date();
         this.date = date.toString();
         this.validator = new ArrayList<>();
 
     }
 
-    public GeneralModel(String date, ArrayList<String> validator) {
+    public CommonModel(String date, ArrayList<String> validator) {
         this.date = date;
         this.validator = validator;
     }

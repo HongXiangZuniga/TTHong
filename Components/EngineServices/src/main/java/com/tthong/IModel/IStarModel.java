@@ -6,7 +6,7 @@ import org.json.JSONException;
 
 import java.util.ArrayList;
 
-public class SubIModel {
+public class IStarModel {
 
     public ArrayList<String> actors;
     public ArrayList<String> dependencies;
@@ -14,7 +14,7 @@ public class SubIModel {
 
 
 
-    public SubIModel() {
+    public IStarModel() {
         this.actors = new ArrayList<String>();
         this.dependencies = new ArrayList<String>();
         this.links = new ArrayList<String>();
@@ -22,7 +22,7 @@ public class SubIModel {
 
 
 
-    public SubIModel(JSONArray actors, JSONArray dependencies, JSONArray links) throws JSONException {
+    public IStarModel(JSONArray actors, JSONArray dependencies, JSONArray links) throws JSONException {
         JsonArray2ArrayList Js2Array = new JsonArray2ArrayList();
 
         this.actors = Js2Array.Js2Array(actors);

@@ -4,27 +4,27 @@ import com.tthong.GeneralModel.CommonModel;
 
 import java.util.ArrayList;
 
-public class IModel extends CommonModel {
+public class ContainerIStarModel extends CommonModel {
 
-    public SubIModel model;
+    public IStarModel model;
 
-    public SubIModel getModel() {
+    public IStarModel getModel() {
         return model;
     }
 
-    public void setModel(SubIModel model) {
+    public void setModel(IStarModel model) {
         this.model = model;
     }
 
-    public IModel() {
-        this.model  = new SubIModel();
+    public ContainerIStarModel() {
+        this.model  = new IStarModel();
     }
 
-    public IModel(SubIModel model) {
+    public ContainerIStarModel(IStarModel model) {
         this.model = model;
     }
 
-    public IModel(String date, ArrayList<String> validator, SubIModel model) {
+    public ContainerIStarModel(String date, ArrayList<String> validator, IStarModel model) {
         super(date, validator);
         this.model = model;
 

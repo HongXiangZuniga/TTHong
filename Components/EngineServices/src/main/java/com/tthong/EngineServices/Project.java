@@ -1,20 +1,20 @@
 package com.tthong.EngineServices;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.tthong.IModel.IModel;
-import com.tthong.ACModel.ACModel;
-import com.tthong.OOMModel.OOMModel;
+import com.tthong.IModel.ContainerIStarModel;
+import com.tthong.ACModel.ContainerACModel;
+import com.tthong.OOMModel.ContainerOOMModel;
 import org.springframework.data.annotation.Id;
 
 
-public class Model {
+public class Project {
 
     @Id
     public String id ;
     private String state;
-    public IModel IModel;
-    public ACModel ACModel;
-    public OOMModel OOMModel;
+    public ContainerIStarModel IModel;
+    public ContainerACModel ACModel;
+    public ContainerOOMModel ContainerOOMModel;
 
 
     public void setState(String state){
@@ -30,17 +30,17 @@ public class Model {
     }
 
     @JsonCreator
-    public Model() {
+    public Project() {
         this.state = "Vanilla";
-        this.IModel = new IModel();
-        this.ACModel = new ACModel();
-        this.OOMModel = new OOMModel();
+        this.IModel = new ContainerIStarModel();
+        this.ACModel = new ContainerACModel();
+        this.ContainerOOMModel = new ContainerOOMModel();
     }
 
-    public Model(String id, com.tthong.IModel.IModel IModel) {
+    public Project(String id, ContainerIStarModel IModel) {
         this.id = id;
         this.IModel = IModel;
-        this.ACModel = new ACModel();
-        this.OOMModel = new OOMModel();
+        this.ACModel = new ContainerACModel();
+        this.ContainerOOMModel = new ContainerOOMModel();
     }
 }

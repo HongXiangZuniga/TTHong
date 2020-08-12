@@ -1,6 +1,5 @@
 package com.tthong.EngineServices;
 
-import com.tthong.IModel.IModel;
 import com.tthong.Json2Model.Json2Model;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,19 +17,19 @@ import java.util.Map;
 
 
 @RestController
-public class ModelController {
+public class ProjectController {
 
     @Autowired
-    private ModelRepository repository;
+    private ProjectRepository repository;
 
     @Autowired
     private EntityLinks entityLinks;
 
     @RequestMapping("/init")
-    public Model init(){
-        Model model = new Model();
-        repository.save(model);
-        return model;
+    public Project init(){
+        Project project = new Project();
+        repository.save(project);
+        return project;
     }
 
 
@@ -56,19 +55,19 @@ public class ModelController {
 
             //Se extrae el estado y el actual
             state =repository.findByid(jsbody.getString("id")).get(0).now();
-            Model model2 = json2Model.transform(jsbody);
-            model2.setState(state);
+            Project project2 = json2Model.transform(jsbody);
+            project2.setState(state);
 
             //Caso de estar validado
-            if(state.equals("Vanilla")&& model2.IModel.getValidator().size()!=0){
-                if(model2.IModel.getValidator().get(0).equals("SecretKey"))
-                model2.setState(steps.update(state));
+            if(state.equals("Vanilla")&& project2.IModel.getValidator().size()!=0){
+                if(project2.IModel.getValidator().get(0).equals("SecretKey"))
+                project2.setState(steps.update(state));
             }
             next = steps.next(state);
             map.put("next",next);
             System.out.println(next);
             //Se guarda la actualizacion 
-            repository.save(model2);
+            repository.save(project2);
 
             //Se entrega el retorno
             return map;
