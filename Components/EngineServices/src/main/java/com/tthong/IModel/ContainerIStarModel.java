@@ -1,10 +1,10 @@
 package com.tthong.IModel;
 
-import com.tthong.GeneralModel.GeneralModel;
+import com.tthong.GeneralModel.CommonModel;
 
 import java.util.ArrayList;
 
-public class IModel extends GeneralModel {
+public class IModel extends CommonModel {
 
     public SubIModel model;
 

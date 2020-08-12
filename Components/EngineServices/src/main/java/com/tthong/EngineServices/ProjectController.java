@@ -1,5 +1,6 @@
 package com.tthong.EngineServices;
 
+import com.tthong.IModel.IModel;
 import com.tthong.Json2Model.Json2Model;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -45,13 +46,6 @@ public class ModelController {
             HashMap<String, String> map = new HashMap<>();
             JSONObject jsbody = new JSONObject(body); // Body del Json
             Json2Model json2Model = new Json2Model();
-            /*
-            JSONObject jsmodelI = new JSONObject(jsbody.getString("modelI"));
-            JSONObject jsmodelAC = new JSONObject(jsbody.getString("modelAC"));
-            JSONObject jsmodelOOM = new JSONObject(jsbody.getString("modelOOM"));
-            JSONObject jstraI2AC = new JSONObject(jsbody.getString("traI2AC"));
-            JSONObject jstraAC2OM = new JSONObject(jsbody.getString("traAC2OM"));
-            */
 
 
             //donde no se encuentra el ID
@@ -62,21 +56,26 @@ public class ModelController {
 
             //Se extrae el estado y el actual
             state =repository.findByid(jsbody.getString("id")).get(0).now();
-            next = steps.next(state);
-            map.put("next",next);
-
-
-            //Se guarda la actualizacion 
             Model model2 = json2Model.transform(jsbody);
             model2.setState(state);
-            repository.save(model2);
 
+            //Caso de estar validado
+            if(state.equals("Vanilla")&& model2.IModel.getValidator().size()!=0){
+                if(model2.IModel.getValidator().get(0).equals("SecretKey"))
+                model2.setState(steps.update(state));
+            }
+            next = steps.next(state);
+            map.put("next",next);
+            System.out.println(next);
+            //Se guarda la actualizacion 
+            repository.save(model2);
 
             //Se entrega el retorno
             return map;
 
 
             }catch(Exception e){
+                System.out.println(e.toString());
                 HashMap<String, String> maperror = new HashMap<>();
                 maperror.put("error", e.toString());
                 return maperror;
