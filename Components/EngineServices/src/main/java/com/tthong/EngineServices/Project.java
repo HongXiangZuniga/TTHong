@@ -14,7 +14,7 @@ public class Project {
     private String state;
     public ContainerIStarModel IModel;
     public ContainerACModel ACModel;
-    public ContainerOOMModel ContainerOOMModel;
+    public ContainerOOMModel OOModel;
 
 
     public void setState(String state){
@@ -34,13 +34,13 @@ public class Project {
         this.state = "Vanilla";
         this.IModel = new ContainerIStarModel();
         this.ACModel = new ContainerACModel();
-        this.ContainerOOMModel = new ContainerOOMModel();
+        this.OOModel = new ContainerOOMModel();
     }
 
     public Project(String id, ContainerIStarModel IModel) {
         this.id = id;
         this.IModel = IModel;
         this.ACModel = new ContainerACModel();
-        this.ContainerOOMModel = new ContainerOOMModel();
+        this.OOModel = new ContainerOOMModel();
     }
 }

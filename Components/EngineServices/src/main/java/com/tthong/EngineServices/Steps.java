@@ -4,15 +4,15 @@ public class Steps {
 
     public String next(String step){
         if(step.equals("Vanilla"))
-            return "I Validator";
-        if(step.equals("I Validated"))
+            return "IStar Validated";
+        if(step.equals("IStar Validated"))
             return "Finish";
         /*if(step.equals("AC Transformated"))
-            return "AC Validator";
+            return "AC Validated";
         if(step.equals("AC Validated"))
-            return "AC2OOM";
+            return "OOM Transformated";
         if(step.equals("OOM Transformated"))
-            return "OOM Validator";
+            return "OOM Validated";
         if(step.equals("OOM Validated"))
             return "Finish";*/
         return "Error";

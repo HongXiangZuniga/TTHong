@@ -1,7 +1,7 @@
 from flask import Flask,request
 app = Flask(__name__)
 
-import GoTo
+import Planner as planner
 
 @app.route('/')
 def main():
@@ -9,12 +9,9 @@ def main():
     content = request.get_json()
     #Caso donde Inicial
     if(len(content)==0):
-        return (GoTo.run(content,"EngineInit"))
-    while(GoTo.run(content,"EngineServices")["next"]!="Finish"):
-        print(GoTo.run(content,"EngineServices"))
-        next = (GoTo.run(content,"EngineServices"))
-        link = next["next"]
-        content = (GoTo.run(content,link))
+        return (planner.Init(content))
+    NextStep = (planner.NextStep(content))
+    content = (planner.Go(content,NextStep))
     return content
            
 

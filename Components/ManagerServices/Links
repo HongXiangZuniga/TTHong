@@ -1,6 +1,6 @@
 EngineServices-http://localhost:8023/Model
 EngineInit-http://localhost:8023/init
-I Validator-http://localhost:8024/
-AC Validator-NI
-I2AC-NI
+IStarValidator-http://localhost:8024/
+ACValidator-NI
+IStar2AC-NI
 AC2OOM-NI
