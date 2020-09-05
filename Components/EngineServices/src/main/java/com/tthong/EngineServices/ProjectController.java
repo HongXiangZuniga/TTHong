@@ -62,12 +62,12 @@ public class ProjectController {
 
             //Caso de estar validado
             if(state.equals("Vanilla")&& project2.IModel.getValidator().size()!=0){
+                System.out.println("Hola");
                 if(project2.IModel.getValidator().get(0).equals("SecretKey"))
                 project2.setState(steps.update(state));
             }
             next = steps.next(state);
             map.put("next",next);
-            System.out.println(next);
             //Se guarda la actualizacion 
             repository.save(project2);
 

@@ -4,8 +4,8 @@ public class Steps {
 
     public String next(String step){
         if(step.equals("Vanilla"))
-            return "IStar Validated";
-        if(step.equals("IStar Validated"))
+            return "IStarValidated";
+        if(step.equals("IStarValidated"))
             return "Finish";
         /*if(step.equals("AC Transformated"))
             return "AC Validated";

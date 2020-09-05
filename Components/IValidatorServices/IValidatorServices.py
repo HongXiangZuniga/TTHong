@@ -12,6 +12,7 @@ def main():
         else:
             content.get("IModel").get("validator").append("SecretKey")
         return content
+        print("Ok")
     
     except Exception as e:
         print("error: ",str(e))
