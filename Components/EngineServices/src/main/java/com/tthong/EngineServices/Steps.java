@@ -6,22 +6,17 @@ public class Steps {
         if(step.equals("Vanilla"))
             return "IStarValidated";
         if(step.equals("IStarValidated"))
+            return "ACTransformate";
+        if(step.equals("ACTransformated"))
+            return "ACValidated";
+        if(step.equals("ACValidated"))
+            return "OOMTransformated";
+        if(step.equals("OOMTransformated"))
+            return "OOMValidated";
+        if(step.equals("OOMValidated"))
             return "Finish";
-        /*if(step.equals("AC Transformated"))
-            return "AC Validated";
-        if(step.equals("AC Validated"))
-            return "OOM Transformated";
-        if(step.equals("OOM Transformated"))
-            return "OOM Validated";
-        if(step.equals("OOM Validated"))
-            return "Finish";*/
+        if(step.equals("Finish"))
+            return "Finish";
         return "Error";
-    }
-
-
-    public String update(String step){
-        if(step.equals("Vanilla"))
-            return ("I Validated");
-        return "Finish";
     }
 }

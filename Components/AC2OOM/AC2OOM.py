@@ -1,8 +1,6 @@
 from flask import Flask,request
 app = Flask(__name__)
 
-import Go 
-import Planner 
 
 @app.route('/')
 def main():
@@ -14,4 +12,4 @@ def main():
 
 
 if __name__ == '__main__':
-     app.run(debug=True, port=8022)
+     app.run(debug=True, port=8027)
