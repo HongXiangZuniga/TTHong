@@ -1,6 +1,0 @@
-EngineServicesInit-http://localhost:8023/init
-EngineServices-http://localhost:8023/Model
-IStarValidated-http://localhost:8024/
-ACValidator-NI
-IStar2AC-NI
-AC2OOM-NI
