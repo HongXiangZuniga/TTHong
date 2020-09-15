@@ -1,15 +1,32 @@
 from flask import Flask,request
+
+#Librerias propias
+import Planner as Planner
+from Ubications import links
+import Go
+
+
+
 app = Flask(__name__)
 
-import Go 
-import Planner 
 
 @app.route('/')
 def main():
     content = request.get_json()
+    #Caso Inicial
     if(len(content)==0):
         return content
-    return "hola mundo"
+    #Se pregunta por el siguiente paso
+    nextstep = Planner.next(content)
+    Links = links()
+    url=Links[nextstep]
+    #Se Actualiza el contenido por el el estado
+    content = Go.to(content,url)
+    #Se Envia al servidor para que revise el estado si debe actualizar
+    Go.to(content,Links["EngineServices"])
+    #Se entrega el contenido
+    return content
+
 
 
 
