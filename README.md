@@ -41,3 +41,12 @@ Los servicios, fueron desarollados en distintos lenguajes y cada uno posee un pu
 - OOMValidatorServices:
   + Port: 8029
   + Esqueleto Python 3
+  
+# Formato
+
+Para inicializar debe enviar al ManagerServices un JSON con la siguiente caracteristicas:
+
+```json
+{}
+```
+
