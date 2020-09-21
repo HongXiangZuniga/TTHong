@@ -79,6 +79,18 @@ Y recibira un proyecto vanilla:
     "id": "ID del proyecto"
 }
 ```
+# Elementos Comunes de los modelos
 
++ date: Fecha de Creacion del Modelo
++ validator: Un arreglo con los errores asociados a la validacion, si este esta validado recibira una en la pos 0 una SecretKey Que debe ser Acordada en el sistema, por defecto es 'abc'
++ model: Lo asociado a cada modelo.
 
+# IstarModel
+  - actors
+  - links
+  - dependencies
+
+# ACModel
+
+# OOModel
 
