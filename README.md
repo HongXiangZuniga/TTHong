@@ -11,3 +11,15 @@ Este repositorio en su version actual, presenta una arquitectura basada en micro
 - AC2OOM
 - OOMValidated
 - Finish
+
+# Servicios
+
+Los servicios, fueron desarollados en distintos lenguajes y cada uno posee un puerto asociado.
+
+- ManagerServices:
+  + Port:8022
+  + Python3
+- EnginerServices:
+  + Port:8023
+  + Java 11
+  + MongoDB:27018
