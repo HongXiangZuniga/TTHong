@@ -21,6 +21,8 @@ def main():
     #Se pregunta por el siguiente paso
     nextstep = Planner.next(content)
     print(nextstep)
+    if(nextstep =="Finish"):
+        return content
     Links = links()
     url=Links[nextstep]
     #Se Actualiza el contenido por el el estado

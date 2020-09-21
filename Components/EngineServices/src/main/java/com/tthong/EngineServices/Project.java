@@ -37,10 +37,10 @@ public class Project {
         this.OOModel = new ContainerOOMModel();
     }
 
-    public Project(String id, ContainerIStarModel IModel) {
+    public Project(String id, ContainerIStarModel IModel,ContainerACModel ACModel,ContainerOOMModel OOModel) {
         this.id = id;
         this.IModel = IModel;
-        this.ACModel = new ContainerACModel();
-        this.OOModel = new ContainerOOMModel();
+        this.ACModel = ACModel;
+        this.OOModel = OOModel;
     }
 }

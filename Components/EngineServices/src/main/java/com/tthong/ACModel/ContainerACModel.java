@@ -2,6 +2,8 @@ package com.tthong.ACModel;
 
 import com.tthong.GeneralModel.CommonModel;
 
+import java.util.ArrayList;
+
 public class ContainerACModel extends CommonModel {
 
     public ACModel model = new ACModel();
@@ -17,7 +19,8 @@ public class ContainerACModel extends CommonModel {
     public ContainerACModel() {
 
     }
-    public ContainerACModel(ACModel model) {
+    public ContainerACModel(String date, ArrayList<String> validator,ACModel model) {
+        super(date, validator);
         this.model = model;
     }
 }
