@@ -1,0 +1,9 @@
+EngineNext-http://localhost:8023/Next
+EngineInit-http://localhost:8023/init
+EngineServices-http://localhost:8023/Model
+IStarValidated-http://localhost:8024/
+IStar2AC-http://localhost:8025/
+ACValidated-http://localhost:8026/
+AC2OOM-http://localhost:8027/
+OOMValidated-http://localhost:8028/
+Finish-Finish
