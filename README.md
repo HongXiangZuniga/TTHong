@@ -49,4 +49,36 @@ Para inicializar debe enviar al ManagerServices un JSON con la siguiente caracte
 ```json
 {}
 ```
+Y recibira un proyecto vanilla:
+
+```json
+{
+    "ACModel": {
+        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "model": {
+            "model": null
+        },
+        "validator": []
+    },
+    "IModel": {
+        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "model": {
+            "actors": [],
+            "dependencies": [],
+            "links": []
+        },
+        "validator": []
+    },
+    "OOModel": {
+        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "model": {
+            "model": null
+        },
+        "validator": []
+    },
+    "id": "ID del proyecto"
+}
+```
+
+
 
