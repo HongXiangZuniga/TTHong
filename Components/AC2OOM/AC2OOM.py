@@ -7,7 +7,7 @@ def main():
     content = request.get_json()
     if(len(content)==0):
         return content
-    return "hola mundo"
+    return content
 
 
 

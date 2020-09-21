@@ -34,7 +34,7 @@ public class ProjectController {
         return project;
     }
 
-    @RequestMapping("/next")
+    @RequestMapping("/Next")
     public Map<String, String> nextModel(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
         try {
             Steps steps = new Steps();
@@ -85,8 +85,13 @@ public class ProjectController {
 
             //Se extrae el estado actual el get(0) porque retorna una lista.
             state =repository.findByid(jsbody.getString("id")).get(0).now();
+            System.out.println(jsbody);
             Project project2 = json2Model.transform(jsbody);
+            System.out.println(">----------<");
+            System.out.println(project2.ACModel.getValidator());
             project2.setState(state);
+
+
 
 
             //Caso de que ya fue validado
@@ -96,6 +101,7 @@ public class ProjectController {
                 }
             }
             if(state.equals("ACValidated")){
+
                 if(project2.ACModel.getValidator().get(0).equals(key)!=true){
                     updateState = false;
                 }

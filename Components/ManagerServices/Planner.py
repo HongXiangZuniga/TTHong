@@ -8,4 +8,5 @@ def next(content):
     Links = links()
     url = Links["EngineNext"]
     send = Go.to(content,url)
+    
     return send.get("next")

@@ -4,10 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
+    secretkey="abc"
     content = request.get_json()
-    if(len(content)==0):
-        return content
-    return "hola mundo"
+    content['IModel']['validator'].append(secretkey)
+    return (content)
+
+    
 
 
 

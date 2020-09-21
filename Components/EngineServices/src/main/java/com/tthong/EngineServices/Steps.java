@@ -6,12 +6,12 @@ public class Steps {
         if(step.equals("Vanilla"))
             return "IStarValidated";
         if(step.equals("IStarValidated"))
-            return "ACTransformate";
-        if(step.equals("ACTransformated"))
+            return "IStar2AC";
+        if(step.equals("IStar2AC"))
             return "ACValidated";
         if(step.equals("ACValidated"))
-            return "OOMTransformated";
-        if(step.equals("OOMTransformated"))
+            return "AC2OOM";
+        if(step.equals("AC2OOM"))
             return "OOMValidated";
         if(step.equals("OOMValidated"))
             return "Finish";
