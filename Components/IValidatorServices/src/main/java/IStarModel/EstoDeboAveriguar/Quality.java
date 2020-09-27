@@ -1,4 +1,11 @@
 package IStarModel.EstoDeboAveriguar;
 
-public class Quañity {
+import CommonModel.Node;
+
+
+public class Quality extends Node {
+
+    public Quality(String id, String name) {
+        super(id, name, "Quality");
+    }
 }
