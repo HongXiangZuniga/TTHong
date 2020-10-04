@@ -4,7 +4,7 @@ import CommonModel.Relation;
 
 public class NeededBy extends Relation {
 
-    public NeededBy(String origin, String target) {
-        super(origin, target, "NeededBy");
+    public NeededBy(String id,String origin, String target) {
+        super(id,origin, target, "NeededBy");
     }
 }

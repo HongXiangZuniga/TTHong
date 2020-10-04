@@ -4,7 +4,7 @@ import CommonModel.Relation;
 
 public class Or  extends Relation {
 
-    public Or(String origin, String target) {
-        super(origin, target, "Or");
+    public Or(String id,String origin, String target) {
+        super(id,origin, target, "Or");
     }
 }
