@@ -1,4 +1,4 @@
-package IStarModel.ALLRelations.Dependencies;
+package IStarModel.ALLRelations.RelationsDependencies;
 
 
 import CommonModel.Relation;

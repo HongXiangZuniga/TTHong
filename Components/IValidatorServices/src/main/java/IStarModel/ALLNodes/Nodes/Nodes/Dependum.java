@@ -1,4 +1,4 @@
-package IStarModel.ALLNodes.Nodes;
+package IStarModel.ALLNodes.Nodes.Nodes;
 
 import CommonModel.Node;
 

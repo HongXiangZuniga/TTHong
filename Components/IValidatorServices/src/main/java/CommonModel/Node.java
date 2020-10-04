@@ -25,6 +25,10 @@ public class Node {
     public String getType() {
         return Type;
     }
+    public void setType(String type) {
+        Type = type;
+    }
+
 
     public Node(String id, String name, String type) {
         Id = id;
@@ -32,7 +36,7 @@ public class Node {
         Type = type;
     }
 
-    public void setType(String type) {
-        Type = type;
+    public boolean isValid(){
+        return true;
     }
 }

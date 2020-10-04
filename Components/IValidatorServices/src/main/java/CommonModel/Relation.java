@@ -1,6 +1,7 @@
 package CommonModel;
 
 public class Relation {
+    private String Id;
     private String Origin;
     private String Target;
     private String Type;
@@ -29,10 +30,23 @@ public class Relation {
         Type = type;
     }
 
-    public Relation(String origin, String target, String type) {
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
+
+    public Relation(String id, String origin, String target, String type) {
+        Id=id;
         Origin = origin;
         Target = target;
         Type = type;
+    }
+
+    public boolean isValid(){
+        return true;
     }
 }
 

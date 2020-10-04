@@ -1,10 +1,15 @@
 {
-    "id":"1234",
-    "model_i":{
-        "date":"date",
-        "validator":[0],
-        "model":{     
-          "actors": [
+    "ACModel": {
+        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "model": {
+            "model": null
+        },
+        "validator": []
+    },
+    "IModel": {
+        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "model": {
+            "actors": [
             {
               "id": "220d2c39-3250-43db-a072-4ad30661410f",
               "text": "Client",
@@ -611,48 +616,16 @@
             "cc024f85-950a-433a-bd1e-89a8170e6b25": {
               "collapsed": true
             }
-          },
-          "tool": "pistar.2.0.0",
-          "istar": "2.0",
-          "saveDate": "Fri, 11 Sep 2020 13:55:02 GMT",
-          "diagram": {
-            "width": 2000,
-            "height": 1300,
-            "name": "Welcome Model",
-            "customProperties": {
-              "Description": "Welcome to the piStar tool! This model describe some of the recent improvements in the tool.\n\nFor help using this tool, please check the Help menu above"
-            }
           }
-        } 
+        },
+        "validator": []
     },
-
-
-    "model_AC":{
-        "date":"date",
-        "validator":[],
-        "model":{
-
-        }
+    "OOModel": {
+        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "model": {
+            "model": null
+        },
+        "validator": []
     },
-
-    "model_OOM":{
-        "date":"date",
-        "validator":[],
-        "model":{
-
-        }
-    },
-
-    
-    "traI2AC":{
-    "relationship":[]
-    
-    },
-
-    "traAC2OM":{
-    "relationship":[]
-    }
-
-
-
+    "id": "ID del proyecto"
 }

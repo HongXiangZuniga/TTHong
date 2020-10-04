@@ -1,4 +1,4 @@
-package IStarModel.ActorLinks;
+package IStarModel.ALLRelations.ActorLinks;
 
 import CommonModel.Relation;
 
