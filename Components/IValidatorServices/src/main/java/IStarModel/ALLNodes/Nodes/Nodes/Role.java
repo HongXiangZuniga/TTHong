@@ -11,17 +11,21 @@ public class Role extends Node {
     public Role(String id, String name,JSONArray nd) {
         super(id, name, "Role");
         this.Nodes = nd;
+        subModel.loadActors(nd);
     }
     public Role(String id, String name) {
         super(id, name, "Role");
     }
 
-
-    @Override
-    public boolean isValid(){
-        if(getName() ==""){
-            return false;
+    public String contain(String id){
+        if(Nodes.length()!=0){
+            for(int i =0;i<subModel.Nodes.size();i++){
+                if(id.equals(subModel.Nodes.get(0).getId())){
+                    return subModel.Nodes.get(0).getType();
+                }
+            }
         }
-        return true;
+        return "";
     }
+
 }

@@ -1,4 +1,4 @@
-package IStarModel.Constrains.Rules.RulesForActors;
+package IStarModel.Constrains.Rules;
 
 import CommonModel.Node;
 import CommonModel.Relation;

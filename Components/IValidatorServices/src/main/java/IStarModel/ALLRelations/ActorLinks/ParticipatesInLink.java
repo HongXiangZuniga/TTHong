@@ -10,14 +10,4 @@ public class ParticipatesInLink extends Relation {
     }
 
 
-    @Override
-    public boolean isValid(){
-        if(getOrigin() ==""){
-            return false;
-        }
-        if(getTarget() ==""){
-            return false;
-        }
-        return true;
-    }
 }

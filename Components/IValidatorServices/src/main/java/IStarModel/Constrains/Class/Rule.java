@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Rule {
 
-    public boolean run(ArrayList<Node> Nodes ,ArrayList<Relation> Relations,ArrayList<String> Errors){
+    public boolean run(ArrayList<Node> Nodes ,ArrayList<Relation> Relations,ArrayList<ArrayList<String>>Errors){
         return false;
     }
 

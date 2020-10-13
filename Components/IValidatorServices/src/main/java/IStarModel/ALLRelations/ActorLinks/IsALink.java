@@ -8,14 +8,5 @@ public class IsALink extends Relation {
         super(id,origin, target,"IsALink");
     }
 
-    @Override
-    public boolean isValid(){
-        if(getOrigin() ==""){
-            return false;
-        }
-        if(getTarget() ==""){
-            return false;
-        }
-        return true;
-    }
+
 }

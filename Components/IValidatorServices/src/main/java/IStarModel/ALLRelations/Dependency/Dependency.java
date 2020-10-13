@@ -8,14 +8,4 @@ public class Dependency extends Relation {
         super(id,origin, target, "GoalDependecy");
     }
 
-    @Override
-    public boolean isValid(){
-        if(getOrigin() ==""){
-            return false;
-        }
-        if(getTarget() ==""){
-            return false;
-        }
-        return true;
-    }
 }
