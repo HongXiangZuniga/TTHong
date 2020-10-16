@@ -5,17 +5,26 @@ import org.json.JSONArray;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class JsonArray2Map {
+public class toResponse {
 
-    public void transform(ArrayList<ArrayList<String>> Array, Map<String, JSONArray> Map){
+    public void transform(ArrayList<ArrayList<String>> Errors, Map<String, ArrayList<String>> Response,String key){
         try{
-            String aux;
-            JSONArray js = new JSONArray();
-            for(int i =0;i<Array.size();i++){
+            ArrayList<String> aux = new ArrayList<>();
+            if(Errors.size()==0){
+                aux.add(key);
+                Response.put("validator",aux);
+            }else{
+                for(int i =0;i<Errors.size();i++){
+                    aux.add(Errors.get(i).get(0)+"-"+Errors.get(i).get(1));
+                }
 
             }
+            Response.put("validator",aux);
         }catch(Exception e){
-            Map.put("Error","ErrorUndefined");
+            ArrayList<String> aux = new ArrayList<>();
+            aux.add("UndefinedError");
+            Response.put("validator",aux);
         }
+
     }
 }

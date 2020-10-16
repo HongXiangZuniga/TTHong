@@ -243,7 +243,6 @@ public class IstarModel   {
         boolean response = true;
         for(int i=0;i<rules.rules.size();i++){
             response = rules.rules.get(i).run(Nodes,Relations,Errors);
-            System.out.println(i+1);
         }
     }
 

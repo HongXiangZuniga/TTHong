@@ -14,7 +14,7 @@ public class r1 extends Rule {
     public boolean run(ArrayList<Node> Nodes , ArrayList<Relation> Relations, ArrayList<ArrayList<String>> Errors){
         Tools tool = new Tools();
         for (int i=0;i<Relations.size();i++){
-            if(Relations.get(i).getType().equals("istar.IsALink")){
+            if(Relations.get(i).getType().equals("IsALink")){
                 try{
                     if((tool.typeof(Relations.get(i).getOrigin(),Nodes).equals("Actor") && tool.typeof(Relations.get(i).getTarget(),Nodes).equals("Actor")) || ((tool.typeof(Relations.get(i).getOrigin(),Nodes).equals("Role") && tool.typeof(Relations.get(i).getTarget(),Nodes).equals("Role"))) ){
                     }

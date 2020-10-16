@@ -14,7 +14,7 @@ public class r2 extends Rule {
     public boolean run(ArrayList<Node> Nodes , ArrayList<Relation> Relations, ArrayList<ArrayList<String>> Errors){
         Tools tool = new Tools();
         for (int i=0;i<Relations.size();i++){
-            if(Relations.get(i).getType().equals("istar.ParticipatesInLink")){
+            if(Relations.get(i).getType().equals("ParticipatesInLink")){
                 try{
                     if((Relations.get(i).getOrigin().equals("Actor") ||Relations.get(i).getOrigin().equals("Role") ||Relations.get(i).equals("Agent")) &&(Relations.get(i).getTarget().equals("Actor") ||Relations.get(i).getTarget().equals("Role") ||Relations.get(i).getTarget().equals("Agent")) ){
                     }
@@ -23,7 +23,7 @@ public class r2 extends Rule {
                         Error.add("ErrorRelations");
                         Error.add(Relations.get(i).getId());
                         Errors.add(Error);
-                        return false;
+
                     }
                 }catch(Exception e) {
                     System.out.println(e.toString());
