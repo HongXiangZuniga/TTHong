@@ -93,17 +93,17 @@ public class ProjectController {
 
             //Caso de que ya fue validado
             if(state.equals("IStarValidated")){
-                if(project2.IModel.getValidator().get(0).equals(key)!=true){
+                if(project2.model_i.getValidator().get(0).equals(key)!=true){
                     updateState = false;
                 }
             }
             if(state.equals("ACValidated")){
-                if(project2.ACModel.getValidator().get(0).equals(key)!=true){
+                if(project2.model_AC.getValidator().get(0).equals(key)!=true){
                     updateState = false;
                 }
             }
             if(state.equals("OOMValidated")){
-                if(project2.OOModel.getValidator().get(0).equals(key)!=true){
+                if(project2.model_OOM.getValidator().get(0).equals(key)!=true){
                     updateState = false;
                 }
             }

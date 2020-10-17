@@ -20,15 +20,20 @@ def main():
         return content
     #Se pregunta por el siguiente paso
     nextstep = Planner.next(content)
-    print(nextstep)
+    #print(nextstep)
     if(nextstep =="Finish"):
         return content
     Links = links()
     url=Links[nextstep]
     #Se Actualiza el contenido por el el estado
-    content = Go.to(content,url)
+    if(nextstep=="IStarValidated"):
+        aux = Go.to(content,url)
+        content["model_i"]["validator"]=aux["validator"]
+    else:
+        content = Go.to(content,url)
+        print("aca paso")
     #Se Envia al servidor para que revise el estado si debe actualizar
-    print(content)
+    #print(content)
     Go.to(content,Links["EngineServices"])
     #Se entrega el contenido
     return content

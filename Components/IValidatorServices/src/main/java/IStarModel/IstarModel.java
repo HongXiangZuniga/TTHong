@@ -188,23 +188,46 @@ public class IstarModel   {
 
 
     public void load(JSONArray actors,JSONArray links,JSONArray dependencies) throws JSONException {
-
-        if(loadActors(actors)==false){
+        try {
+            if (loadActors(actors) == false) {
+                ArrayList<String> Error = null;
+                Error.add("Errror");
+                Error.add("Actors");
+                Errors.add(Error);
+            }
+        }catch (Exception e) {
             ArrayList<String> Error = null;
             Error.add("Errror");
             Error.add("Actors");
+            Errors.add(Error);
         }
-        if(loadDependencies(dependencies)==false){
-            ArrayList<String> Error = null;
-            Error.add("Errror");
-            Error.add("Dependencies");
-        }
-        if(loadLinks(links)==false){
+        try {
+            if (loadLinks(actors) == false) {
+                ArrayList<String> Error = null;
+                Error.add("Errror");
+                Error.add("LinksS");
+                Errors.add(Error);
+            }
+        }catch (Exception e) {
             ArrayList<String> Error = null;
             Error.add("Errror");
             Error.add("Links");
+            Errors.add(Error);
         }
-        System.out.println(Nodes);
+        try {
+            if (loadDependencies(actors) == false) {
+                ArrayList<String> Error = null;
+                Error.add("Errror");
+                Error.add("Dependencies");
+                Errors.add(Error);
+            }
+        }catch (Exception e) {
+            ArrayList<String> Error = null;
+            Error.add("Errror");
+            Error.add("Dependencies");
+            Errors.add(Error);
+        }
+
 
 
     }

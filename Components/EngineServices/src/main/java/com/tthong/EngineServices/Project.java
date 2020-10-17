@@ -12,9 +12,9 @@ public class Project {
     @Id
     public String id ;
     private String state;
-    public ContainerIStarModel IModel;
-    public ContainerACModel ACModel;
-    public ContainerOOMModel OOModel;
+    public ContainerIStarModel model_i;
+    public ContainerACModel model_AC;
+    public ContainerOOMModel model_OOM;
 
 
     public void setState(String state){
@@ -32,15 +32,15 @@ public class Project {
     @JsonCreator
     public Project() {
         this.state = "Vanilla";
-        this.IModel = new ContainerIStarModel();
-        this.ACModel = new ContainerACModel();
-        this.OOModel = new ContainerOOMModel();
+        this.model_i = new ContainerIStarModel();
+        this.model_AC = new ContainerACModel();
+        this.model_OOM = new ContainerOOMModel();
     }
 
     public Project(String id, ContainerIStarModel IModel,ContainerACModel ACModel,ContainerOOMModel OOModel) {
         this.id = id;
-        this.IModel = IModel;
-        this.ACModel = ACModel;
-        this.OOModel = OOModel;
+        this.model_i = IModel;
+        this.model_AC = ACModel;
+        this.model_OOM = OOModel;
     }
 }
