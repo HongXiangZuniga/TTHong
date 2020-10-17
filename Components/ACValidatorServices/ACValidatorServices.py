@@ -6,7 +6,7 @@ app = Flask(__name__)
 def main():
     secretkey="abc"
     content = request.get_json()
-    content['ACModel']['validator'].append(secretkey)
+    content['model_AC']['validator'].append(secretkey)
     return (content)
 
 

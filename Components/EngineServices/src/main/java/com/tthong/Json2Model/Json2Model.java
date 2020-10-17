@@ -49,9 +49,9 @@ public class Json2Model {
     }
 
     public Project transform(JSONObject JsonBody) throws JSONException {
-        ContainerIStarModel iModel = Json2IModel(JsonBody.getJSONObject("IModel"));
-        ContainerACModel ACModel = Json2ACModel(JsonBody.getJSONObject("ACModel"));
-        ContainerOOMModel OOModel = Json2OOModel(JsonBody.getJSONObject("OOModel"));
+        ContainerIStarModel iModel = Json2IModel(JsonBody.getJSONObject("model_i"));
+        ContainerACModel ACModel = Json2ACModel(JsonBody.getJSONObject("model_AC"));
+        ContainerOOMModel OOModel = Json2OOModel(JsonBody.getJSONObject("model_OOM"));
         return new Project(JsonBody.getString("id"),iModel,ACModel,OOModel);
     }
 
