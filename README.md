@@ -53,14 +53,14 @@ Y recibira un proyecto vanilla:
 
 ```json
 {
-    "ACModel": {
+    "model_AC": {
         "date": "Mon Sep 21 00:12:49 CLST 2020",
         "model": {
             "model": null
         },
         "validator": []
     },
-    "IModel": {
+    "model_i": {
         "date": "Mon Sep 21 00:12:49 CLST 2020",
         "model": {
             "actors": [],
@@ -69,7 +69,7 @@ Y recibira un proyecto vanilla:
         },
         "validator": []
     },
-    "OOModel": {
+    "model_OOM": {
         "date": "Mon Sep 21 00:12:49 CLST 2020",
         "model": {
             "model": null
