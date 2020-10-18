@@ -9,4 +9,18 @@ public class IsALink extends Relation {
     }
 
 
+    //Validacion Individual
+    @Override
+    public boolean isValid() {
+        if(getId().equals("")){
+            return false;
+        }
+        if(getOrigin().equals("")){
+            return false;
+        }
+        if(getTarget().equals("")){
+            return false;
+        }
+        return true;
+    }
 }

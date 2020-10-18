@@ -191,39 +191,39 @@ public class IstarModel   {
         try {
             if (loadActors(actors) == false) {
                 ArrayList<String> Error = null;
-                Error.add("Errror");
+                Error.add("ErrrorLoad");
                 Error.add("Actors");
                 Errors.add(Error);
             }
         }catch (Exception e) {
             ArrayList<String> Error = null;
-            Error.add("Errror");
+            Error.add("ErrrorLoad");
             Error.add("Actors");
             Errors.add(Error);
         }
         try {
             if (loadLinks(actors) == false) {
                 ArrayList<String> Error = null;
-                Error.add("Errror");
+                Error.add("ErrrorLoad");
                 Error.add("LinksS");
                 Errors.add(Error);
             }
         }catch (Exception e) {
             ArrayList<String> Error = null;
-            Error.add("Errror");
+            Error.add("ErrrorLoad");
             Error.add("Links");
             Errors.add(Error);
         }
         try {
             if (loadDependencies(actors) == false) {
                 ArrayList<String> Error = null;
-                Error.add("Errror");
+                Error.add("ErrrorLoad");
                 Error.add("Dependencies");
                 Errors.add(Error);
             }
         }catch (Exception e) {
             ArrayList<String> Error = null;
-            Error.add("Errror");
+            Error.add("ErrrorLoad");
             Error.add("Dependencies");
             Errors.add(Error);
         }

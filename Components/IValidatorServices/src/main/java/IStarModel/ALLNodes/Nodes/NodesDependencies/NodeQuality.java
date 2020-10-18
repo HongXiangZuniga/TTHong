@@ -7,16 +7,13 @@ public class NodeQuality extends Node{
     public NodeQuality(String id, String name) {
         super(id, name, "NodeQuality");
     }
-    public boolean isValid(){
-        try{
-            if(getId() ==""){
-                return false;
-            }
-            return true;
-        }catch(Exception e){
 
+
+    @Override
+    public boolean isValid() {
+        if(getId().equals("")){
             return false;
         }
-
+        return true;
     }
 }
