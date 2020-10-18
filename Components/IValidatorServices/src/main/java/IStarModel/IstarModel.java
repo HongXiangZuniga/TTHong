@@ -132,6 +132,7 @@ public class IstarModel   {
                 /*if(link.get("type").equals("istar.DependencyLink")){
                     this.Relations.add(new Dependency(link.getString("id"),link.getString("source"), link.getString("target") ));
                 }*/
+                System.out.println(link.getString("type"));
                 if(link.get("type").equals("istar.ContributionLink")){
                     this.Relations.add(new Contribution(link.getString("id"),link.getString("source"),link.getString("target"),link.getString("label")));
                 }
@@ -202,7 +203,7 @@ public class IstarModel   {
             Errors.add(Error);
         }
         try {
-            if (loadLinks(actors) == false) {
+            if (loadLinks(links) == false) {
                 ArrayList<String> Error = null;
                 Error.add("ErrrorLoad");
                 Error.add("LinksS");
@@ -215,7 +216,7 @@ public class IstarModel   {
             Errors.add(Error);
         }
         try {
-            if (loadDependencies(actors) == false) {
+            if (loadDependencies(dependencies) == false) {
                 ArrayList<String> Error = null;
                 Error.add("ErrrorLoad");
                 Error.add("Dependencies");
@@ -266,6 +267,7 @@ public class IstarModel   {
         boolean response = true;
         for(int i=0;i<rules.rules.size();i++){
             response = rules.rules.get(i).run(Nodes,Relations,Errors);
+            System.out.println(response);
         }
     }
 

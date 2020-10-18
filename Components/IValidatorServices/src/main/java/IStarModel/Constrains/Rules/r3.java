@@ -16,9 +16,12 @@ public class r3 extends Rule {
         String typeOrigin = "";
         String typeTarget = "";
         for (int i=0;i<Relations.size();i++){
+            System.out.print(Relations.get(i).getType());
             if((Relations.get(i).getType().equals("And")) || (Relations.get(i).getType()).equals("Or")) {
                 typeOrigin = tool.typeof(Relations.get(i).getOrigin(),Nodes);
                 typeTarget = tool.typeof(Relations.get(i).getTarget(),Nodes);
+                System.out.println(typeOrigin);
+                System.out.println(typeTarget);
                 if((typeOrigin.equals("NodeGoal")&& typeTarget.equals("NodeGoal")) ||(typeOrigin.equals("NodeGoal")&&(typeTarget.equals("NodeTask"))) ||(typeOrigin.equals("NodeTask")&&(typeTarget.equals("NodeGoal"))) || (typeOrigin.equals("NodeTask")&& typeTarget.equals("NodeTask"))){
                     //System.out.println("ok");
                 }else{
