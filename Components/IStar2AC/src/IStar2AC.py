@@ -4,12 +4,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def main():
-    secretkey="abc"
     content = request.get_json()
-    content['model_AC']['validator'].append(secretkey)
-    return (content)
+    if(len(content)==0):
+        return content
+    return content
 
 
 
 if __name__ == '__main__':
-     app.run(debug=True, port=8026)
+    app.run(host='0.0.0.0',port=8025)
