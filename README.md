@@ -26,9 +26,6 @@ Los servicios, fueron desarollados en distintos lenguajes y cada uno posee un pu
 - IValidatorServices:
   + Port: 8024
   + Java 11
-- IValidatorServices:
-  + Port: 8025
-  + Esqueleto Python 3
 - IStar2ACServices:
   + Port: 8026
   + Esqueleto Python 3
