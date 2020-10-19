@@ -129,6 +129,7 @@ public class IstarModel   {
             for(int i =0;i<links.length();i++){
                 JSONObject link = new JSONObject();
                 link = links.getJSONObject(i);
+                //No se cargan los links de depenedencia por redunancia.
                 /*if(link.get("type").equals("istar.DependencyLink")){
                     this.Relations.add(new Dependency(link.getString("id"),link.getString("source"), link.getString("target") ));
                 }*/
