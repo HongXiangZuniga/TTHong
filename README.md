@@ -25,7 +25,7 @@ Los servicios, fueron desarollados en distintos lenguajes y cada uno posee un pu
   + MongoDB: 27018
 - IValidatorServices:
   + Port: 8024
-  + Esqueleto Python 3
+  + Java 11
 - IValidatorServices:
   + Port: 8025
   + Esqueleto Python 3
