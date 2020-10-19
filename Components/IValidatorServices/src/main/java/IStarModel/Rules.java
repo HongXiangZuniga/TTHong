@@ -18,5 +18,6 @@ public class Rules {
         rules.add(new r1());
         rules.add(new r2());
         rules.add(new r3());
+        rules.add(new r4());
     }
 }

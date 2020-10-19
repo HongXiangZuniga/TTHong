@@ -27,4 +27,11 @@ public class Agent extends Node {
         }
         return "";
     }
+    @Override
+    public boolean isValid() {
+        if(getId().equals("")){
+            return false;
+        }
+        return true;
+    }
 }

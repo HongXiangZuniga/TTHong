@@ -17,5 +17,19 @@ public class Contribution extends Relation {
         super(id,origin, target, "Contribution");
         this.subtipo = st;
     }
+    //Validacion Individual
+    @Override
+    public boolean isValid() {
+        if(getId().equals("")){
+            return false;
+        }
+        if(getOrigin().equals("")){
+            return false;
+        }
+        if(getTarget().equals("")){
+            return false;
+        }
+        return true;
+    }
 
 }
