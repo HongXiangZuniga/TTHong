@@ -1,9 +1,6 @@
 package IStarModel.Constrains.Tools;
 
 import CommonModel.Node;
-import IStarModel.ALLNodes.Nodes.Nodes.Actor;
-import IStarModel.ALLNodes.Nodes.Nodes.Agent;
-import IStarModel.ALLNodes.Nodes.Nodes.Role;
 
 import java.util.ArrayList;
 
