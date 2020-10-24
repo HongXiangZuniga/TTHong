@@ -1,0 +1,528 @@
+{
+    "actors": [
+        {
+            "unique": "2",
+            "identifier": "",
+            "name": "Lessor",
+            "type": "Actor",
+            "x": 130,
+            "y": 130
+        },
+        {
+            "unique": "3",
+            "identifier": "",
+            "name": "Clerk",
+            "type": "Actor",
+            "x": 510,
+            "y": 130
+        },
+        {
+            "unique": "4",
+            "identifier": "Actor 3",
+            "name": "New Actor 3",
+            "type": "Actor",
+            "x": 10,
+            "y": 60
+        },
+        {
+            "unique": "18",
+            "identifier": "",
+            "name": "Lessor",
+            "type": "Actor",
+            "x": 90,
+            "y": 300
+        },
+        {
+            "unique": "20",
+            "identifier": "",
+            "name": "Claims Analyst",
+            "type": "Actor",
+            "x": 540,
+            "y": 300
+        },
+        {
+            "unique": "24",
+            "identifier": "",
+            "name": "Clerk",
+            "type": "Actor",
+            "x": 530,
+            "y": 450
+        },
+        {
+            "unique": "26",
+            "identifier": "",
+            "name": "Lessor",
+            "type": "Actor",
+            "x": 100,
+            "y": 490
+        },
+        {
+            "unique": "28",
+            "identifier": "",
+            "name": "Lessor",
+            "type": "Actor",
+            "x": 880,
+            "y": 130
+        },
+        {
+            "unique": "29",
+            "identifier": "",
+            "name": "Clerk",
+            "type": "Actor",
+            "x": 1260,
+            "y": 130
+        },
+        {
+            "unique": "41",
+            "identifier": "",
+            "name": "Lessor",
+            "type": "Actor",
+            "x": 840,
+            "y": 470
+        },
+        {
+            "unique": "43",
+            "identifier": "",
+            "name": "Claims Analyst",
+            "type": "Actor",
+            "x": 1290,
+            "y": 470
+        },
+        {
+            "unique": "46",
+            "identifier": "",
+            "name": "Clerk",
+            "type": "Actor",
+            "x": 1280,
+            "y": 260
+        },
+        {
+            "unique": "48",
+            "identifier": "",
+            "name": "Lessor",
+            "type": "Actor",
+            "x": 850,
+            "y": 300
+        },
+        {
+            "unique": "52",
+            "identifier": "Actor 7",
+            "name": "New Actor 7",
+            "type": "Actor",
+            "x": 1450,
+            "y": 150
+        }
+    ],
+    "communicativeEvents": [
+        {
+            "unique": "5",
+            "identifier": "CL001",
+            "name": "Present claim",
+            "type": "Communicative Event",
+            "goals": "",
+            "description": "",
+            "channel": "",
+            "temporalRestrictions": "",
+            "frequency": "",
+            "contextConstraints": "",
+            "structuralConstraints": "",
+            "treatment": "",
+            "linkedCommunication": "",
+            "linkedReaction": "",
+            "x": 270,
+            "y": 110,
+            "supportActor": [
+                {
+                    "unique": "6",
+                    "identifier": "",
+                    "name": "Clerk",
+                    "type": "Support Actor"
+                }
+            ]
+        },
+        {
+            "unique": "9",
+            "identifier": "CL003",
+            "name": "Give compensation",
+            "type": "Communicative Event",
+            "goals": "",
+            "description": "",
+            "channel": "",
+            "temporalRestrictions": "",
+            "frequency": "",
+            "contextConstraints": "",
+            "structuralConstraints": "",
+            "treatment": "",
+            "linkedCommunication": "",
+            "linkedReaction": "",
+            "x": 270,
+            "y": 460,
+            "supportActor": [
+                {
+                    "unique": "10",
+                    "identifier": "Actor",
+                    "name": "New Actor",
+                    "type": "Support Actor"
+                }
+            ]
+        },
+        {
+            "unique": "30",
+            "identifier": "CL001",
+            "name": "Present claim",
+            "type": "Communicative Event",
+            "goals": "",
+            "description": "",
+            "channel": "",
+            "temporalRestrictions": "",
+            "frequency": "",
+            "contextConstraints": "",
+            "structuralConstraints": "",
+            "treatment": "",
+            "linkedCommunication": "",
+            "linkedReaction": "",
+            "x": 1020,
+            "y": 110,
+            "supportActor": [
+                {
+                    "unique": "31",
+                    "identifier": "",
+                    "name": "Clerk",
+                    "type": "Support Actor"
+                }
+            ]
+        },
+        {
+            "unique": "34",
+            "identifier": "CL003",
+            "name": "Give compensation",
+            "type": "Communicative Event",
+            "goals": "",
+            "description": "",
+            "channel": "",
+            "temporalRestrictions": "",
+            "frequency": "",
+            "contextConstraints": "",
+            "structuralConstraints": "",
+            "treatment": "",
+            "linkedCommunication": "",
+            "linkedReaction": "",
+            "x": 1020,
+            "y": 270,
+            "supportActor": [
+                {
+                    "unique": "35",
+                    "identifier": "Actor",
+                    "name": "New Actor",
+                    "type": "Support Actor"
+                }
+            ]
+        }
+    ],
+    "specialisedCommunicativeEvents": [
+        {
+            "unique": "13",
+            "identifier": "CL002",
+            "name": "Assess Claim",
+            "type": "Specialised Communicative Event",
+            "goals": "",
+            "description": "",
+            "channel": "",
+            "temporalRestrictions": "",
+            "frequency": "",
+            "contextConstraints": "",
+            "structuralConstraints": "",
+            "treatment": "",
+            "linkedCommunication": "",
+            "linkedReaction": "",
+            "x": 240,
+            "y": 250,
+            "internalCommunicativeEvent": [
+                {
+                    "unique": "14",
+                    "identifier": "",
+                    "name": "Invalid",
+                    "type": "Internal Communicative Event",
+                    "goals": "",
+                    "description": "",
+                    "channel": "",
+                    "temporalRestrictions": "",
+                    "frequency": "",
+                    "contextConstraints": "",
+                    "structuralConstraints": "",
+                    "treatment": "",
+                    "linkedCommunication": "",
+                    "linkedReaction": ""
+                },
+                {
+                    "unique": "15",
+                    "identifier": "",
+                    "name": "is Valid",
+                    "type": "Internal Communicative Event",
+                    "goals": "",
+                    "description": "",
+                    "channel": "",
+                    "temporalRestrictions": "",
+                    "frequency": "",
+                    "contextConstraints": "",
+                    "structuralConstraints": "",
+                    "treatment": "",
+                    "linkedCommunication": "",
+                    "linkedReaction": ""
+                }
+            ],
+            "supportActor": [
+                {
+                    "unique": "16",
+                    "identifier": "",
+                    "name": "Claims Analyst",
+                    "type": "Support Actor"
+                }
+            ]
+        },
+        {
+            "unique": "36",
+            "identifier": "CL002",
+            "name": "Assess Claim",
+            "type": "Specialised Communicative Event",
+            "goals": "",
+            "description": "",
+            "channel": "",
+            "temporalRestrictions": "",
+            "frequency": "",
+            "contextConstraints": "",
+            "structuralConstraints": "",
+            "treatment": "",
+            "linkedCommunication": "",
+            "linkedReaction": "",
+            "x": 990,
+            "y": 420,
+            "internalCommunicativeEvent": [
+                {
+                    "unique": "37",
+                    "identifier": "",
+                    "name": "Invalid",
+                    "type": "Internal Communicative Event",
+                    "goals": "",
+                    "description": "",
+                    "channel": "",
+                    "temporalRestrictions": "",
+                    "frequency": "",
+                    "contextConstraints": "",
+                    "structuralConstraints": "",
+                    "treatment": "",
+                    "linkedCommunication": "",
+                    "linkedReaction": ""
+                },
+                {
+                    "unique": "38",
+                    "identifier": "",
+                    "name": "is Valid",
+                    "type": "Internal Communicative Event",
+                    "goals": "",
+                    "description": "",
+                    "channel": "",
+                    "temporalRestrictions": "",
+                    "frequency": "",
+                    "contextConstraints": "",
+                    "structuralConstraints": "",
+                    "treatment": "",
+                    "linkedCommunication": "",
+                    "linkedReaction": ""
+                }
+            ],
+            "supportActor": [
+                {
+                    "unique": "39",
+                    "identifier": "",
+                    "name": "Claims Analyst",
+                    "type": "Support Actor"
+                }
+            ]
+        }
+    ],
+    "communicativeInteractions": [
+        {
+            "unique": "7",
+            "identifier": "",
+            "name": "claim",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "2",
+            "target": "5"
+        },
+        {
+            "unique": "8",
+            "identifier": "",
+            "name": "claim",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "5",
+            "target": "3"
+        },
+        {
+            "unique": "19",
+            "identifier": "",
+            "name": "resolution",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "13",
+            "target": "18"
+        },
+        {
+            "unique": "21",
+            "identifier": "CI",
+            "name": "resolution",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "20",
+            "target": "13"
+        },
+        {
+            "unique": "25",
+            "identifier": "CI",
+            "name": "compensation",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "24",
+            "target": "9"
+        },
+        {
+            "unique": "27",
+            "identifier": "CI",
+            "name": "compensation",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "9",
+            "target": "26"
+        },
+        {
+            "unique": "32",
+            "identifier": "",
+            "name": "claim",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "28",
+            "target": "30"
+        },
+        {
+            "unique": "33",
+            "identifier": "",
+            "name": "claim",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "30",
+            "target": "29"
+        },
+        {
+            "unique": "42",
+            "identifier": "",
+            "name": "resolution",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "36",
+            "target": "41"
+        },
+        {
+            "unique": "44",
+            "identifier": "CI",
+            "name": "resolution",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "43",
+            "target": "36"
+        },
+        {
+            "unique": "47",
+            "identifier": "CI",
+            "name": "compensation",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "46",
+            "target": "34"
+        },
+        {
+            "unique": "49",
+            "identifier": "CI",
+            "name": "compensation",
+            "type": "Communicative Interaction",
+            "messageStructure": {
+                "name": "New Structure",
+                "type": "Structure",
+                "children": []
+            },
+            "source": "34",
+            "target": "48"
+        }
+    ],
+    "precedenceRelations": [
+        {
+            "unique": "17",
+            "type": "Precedence Relation",
+            "source": "5",
+            "target": "13"
+        },
+        {
+            "unique": "23",
+            "type": "Precedence Relation",
+            "source": "15",
+            "target": "9"
+        },
+        {
+            "unique": "50",
+            "type": "Precedence Relation",
+            "source": "30",
+            "target": "34"
+        },
+        {
+            "unique": "51",
+            "type": "Precedence Relation",
+            "source": "34",
+            "target": "36"
+        }
+    ]
+}

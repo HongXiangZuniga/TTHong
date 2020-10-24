@@ -17,7 +17,7 @@ public class ApigatewayApplication {
 		return builder.routes()
 				.route(p -> p
 				.path("/")
-				.uri("http://127.0.0.1:8022/"))
+				.uri("http://172.17.0.5:8022/"))
 				.build();
 
 		}
