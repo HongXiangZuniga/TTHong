@@ -1,13 +1,13 @@
-package IStarModel.ALLNodes.Nodes.NodesDependencies;
-
+package IStarModel.ALLNodes.Nodes;
 
 import CommonModel.Node;
 
-public class NodeGoal extends Node {
+public class Dependum extends Node {
 
-    public NodeGoal(String id, String name) {
-        super(id, name, "NodeGoal");
+    public Dependum(String id, String name) {
+        super(id, name, "Dependum");
     }
+
     @Override
     public boolean isValid() {
         if(getId().equals("")){

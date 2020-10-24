@@ -1,20 +1,21 @@
-package IStarModel.ALLNodes.Nodes.Nodes;
+package IStarModel.ALLNodes.Nodes;
 
 import CommonModel.Node;
+import IStarModel.Adapters.pistartool;
 import IStarModel.IstarModel;
 import org.json.JSONArray;
 
-public class Role extends Node {
-    public JSONArray Nodes;
+public class Agent extends Node {
     public IstarModel subModel = new IstarModel();
+    public JSONArray Nodes;
 
-    public Role(String id, String name,JSONArray nd) {
-        super(id, name, "Role");
+    public Agent(String id, String name,JSONArray nd) {
+        super(id, name, "Agent");
         this.Nodes = nd;
         subModel.loadActors(nd);
     }
-    public Role(String id, String name) {
-        super(id, name, "Role");
+    public Agent(String id, String name) {
+        super(id, name, "Agent");
     }
 
     public String contain(String id){
@@ -27,7 +28,6 @@ public class Role extends Node {
         }
         return "";
     }
-
     @Override
     public boolean isValid() {
         if(getId().equals("")){
@@ -35,5 +35,4 @@ public class Role extends Node {
         }
         return true;
     }
-
 }
