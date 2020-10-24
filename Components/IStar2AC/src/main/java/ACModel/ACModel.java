@@ -1,6 +1,6 @@
 package ACModel;
 
-import ACModel.Elements.*;
+import ACModel.elements.*;
 
 import java.util.ArrayList;
 
