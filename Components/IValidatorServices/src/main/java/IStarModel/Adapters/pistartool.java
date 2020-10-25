@@ -159,16 +159,16 @@ public class pistartool {
                 JSONObject dependencie = new JSONObject();
                 dependencie = dependencies.getJSONObject(i);
                 if(dependencie.get("type").equals("istar.Goal")){
-                    Relations.add(new RelationGoal(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationGoal(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
                 if(dependencie.get("type").equals("istar.Quality")){
-                    Relations.add(new RelationQuality(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationQuality(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
                 if(dependencie.get("type").equals("istar.Resource")){
-                    Relations.add(new RelationResource(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationResource(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
                 if(dependencie.get("type").equals("istar.Task")){
-                    Relations.add(new RelationTask(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationTask(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
 
             }
