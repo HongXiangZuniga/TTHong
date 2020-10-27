@@ -120,11 +120,6 @@ public class pistartool {
             for(int i =0;i<links.length();i++){
                 JSONObject link = new JSONObject();
                 link = links.getJSONObject(i);
-                //No se cargan los links de depenedencia por redunancia.
-                /*if(link.get("type").equals("istar.DependencyLink")){
-                    this.Relations.add(new Dependency(link.getString("id"),link.getString("source"), link.getString("target") ));
-                }*/
-                System.out.println(link.getString("type"));
                 if(link.get("type").equals("istar.ContributionLink")){
                     Relations.add(new Contribution(link.getString("id"),link.getString("source"),link.getString("target"),link.getString("label")));
                 }

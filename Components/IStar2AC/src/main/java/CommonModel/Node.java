@@ -1,10 +1,13 @@
 package CommonModel;
 
+import IStarModel.IstarModel;
+
 public class Node {
 
     private String Id;
     private String Name;
     private String Type;
+    public IstarModel subModel = new IstarModel();
 
     public String getId() {
         return Id;

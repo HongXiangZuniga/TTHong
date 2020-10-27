@@ -37,4 +37,31 @@ public class tools {
         }
         return null;
     }
+
+    public Node inNode(String id,ArrayList<Node>Nodes){
+        for (int i = 0; i < Nodes.size(); i++) {
+            for(int j = 0;j<Nodes.get(i).subModel.getNodes().size();j++){
+                if(id.equals(Nodes.get(i).subModel.getNodes().get(j).getId())){
+                    return Nodes.get(i);
+                }
+            }
+        }
+        return null;
+    }
+
+    public String typeInNode(String id,ArrayList<Node>Nodes){
+        for (int i = 0; i < Nodes.size(); i++) {
+            for(int j = 0;j<Nodes.get(i).subModel.getNodes().size();j++){
+                if(id.equals(Nodes.get(i).subModel.getNodes().get(j).getId())){
+                    return Nodes.get(i).subModel.getNodes().get(j).getType();
+                }
+            }
+        }
+        return null;
+    }
+
+
+
+
+
 }

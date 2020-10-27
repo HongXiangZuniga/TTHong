@@ -76,4 +76,17 @@ public class CommunicativeInteraction {
         this.target = target;
         this.messageStructure = messageStructure;
     }
+
+    @Override
+    public String toString() {
+        return "CommunicativeInteraction{" +
+                "idSistem='" + idSistem + '\'' +
+                ", idUser='" + idUser + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", source='" + source + '\'' +
+                ", target='" + target + '\'' +
+                ", messageStructure=" + messageStructure +
+                '}';
+    }
 }

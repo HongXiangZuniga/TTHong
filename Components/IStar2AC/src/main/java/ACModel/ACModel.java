@@ -51,12 +51,46 @@ public class ACModel {
         this.precedenceRelations = precedenceRelations;
     }
 
-    public ACModel(ArrayList<Actor> actors, ArrayList<CommunicativeEvent> communicativeEvents, ArrayList<SpecialisedCommunicativeEvent> specialisedCommunicativeEvents, ArrayList<CommunicativeInteraction> communicativeInteractions, ArrayList<PrecedenceRelation> precedenceRelations) {
-        this.actors = actors;
-        this.communicativeEvents = communicativeEvents;
-        this.specialisedCommunicativeEvents = specialisedCommunicativeEvents;
-        this.communicativeInteractions = communicativeInteractions;
-        this.precedenceRelations = precedenceRelations;
+    public ACModel() {
+        this.actors = new ArrayList<>();
+        this.communicativeEvents = new ArrayList<>();
+        this.specialisedCommunicativeEvents = new ArrayList<>();
+        this.communicativeInteractions = new ArrayList<>();
+        this.precedenceRelations = new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+        return "ACModel{" +
+                "actors=" + actors +
+                ", communicativeEvents=" + communicativeEvents +
+                ", specialisedCommunicativeEvents=" + specialisedCommunicativeEvents +
+                ", communicativeInteractions=" + communicativeInteractions +
+                ", precedenceRelations=" + precedenceRelations +
+                '}';
+    }
+
+    public void view(){
+        System.out.println("ACTORS:");
+        for(int i =0;i<getActors().size();i++){
+           System.out.println(getActors().get(i).toString());
+        }
+        System.out.println("Comunicative Events:");
+        for(int i =0;i<getCommunicativeEvents().size();i++){
+            System.out.println(getCommunicativeEvents().get(i).toString());
+        }
+        System.out.println("Comunicative Interactions:");
+        for(int i=0;i<getCommunicativeInteractions().size();i++){
+            System.out.println(getCommunicativeInteractions().get(i).toString());
+        }
+        System.out.println("getPrecedence Relations:");
+        for(int i =0;i<getPrecedenceRelations().size();i++){
+            System.out.println((getPrecedenceRelations().get(i).toString()));
+        }
+        System.out.println("getSpecialised Communicative Events:");
+        for(int i =0;i<getSpecialisedCommunicativeEvents().size();i++){
+            System.out.println((getSpecialisedCommunicativeEvents().get(i).toString()));
+        }
     }
 }
 

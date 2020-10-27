@@ -15,7 +15,7 @@ public class CommunicativeEvent {
     private String treatment;
     private String linkedCommunication;
     private String linkedReaction;
-    private ArrayList<Actor> supportActor = new ArrayList<>();
+    private Actor supportActor;
 
     public String getIdSistem() {
         return idSistem;
@@ -113,15 +113,15 @@ public class CommunicativeEvent {
         this.linkedReaction = linkedReaction;
     }
 
-    public ArrayList<Actor> getSupportActor() {
+    public Actor getSupportActor() {
         return supportActor;
     }
 
-    public void setSupportActor(ArrayList<Actor> supportActor) {
+    public void setSupportActor(Actor supportActor) {
         this.supportActor = supportActor;
     }
 
-    public CommunicativeEvent(String idSistem, String idUser, String name, String type, String description, String chanel, String temporalRestrictions, String frequency, String contextConstraints, String treatment, String linkedCommunication, String linkedReaction, ArrayList<Actor> supportActor) {
+    public CommunicativeEvent(String idSistem, String idUser, String name, String type, String description, String chanel, String temporalRestrictions, String frequency, String contextConstraints, String treatment, String linkedCommunication, String linkedReaction, Actor supportActor) {
         this.idSistem = idSistem;
         this.idUser = idUser;
         this.name = name;

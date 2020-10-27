@@ -1,7 +1,5 @@
 package ACModel.elements;
 
-import ACModel.elements.subElements.InternalCommunicativeEvent;
-
 import java.util.ArrayList;
 
 public class SpecialisedCommunicativeEvent {
@@ -19,7 +17,7 @@ public class SpecialisedCommunicativeEvent {
     private String treatment;
     private String linkedCommunication;
     private String linkedReaction;
-    private ArrayList<InternalCommunicativeEvent> InternalCommunicativeEvent = new ArrayList<>();
+    private ArrayList<CommunicativeEvent> InternalCommunicativeEvent = new ArrayList<>();
 
     public String getIdSistema() {
         return idSistema;
@@ -133,15 +131,15 @@ public class SpecialisedCommunicativeEvent {
         this.linkedReaction = linkedReaction;
     }
 
-    public ArrayList<ACModel.elements.subElements.InternalCommunicativeEvent> getInternalCommunicativeEvent() {
+    public ArrayList<CommunicativeEvent> getInternalCommunicativeEvent() {
         return InternalCommunicativeEvent;
     }
 
-    public void setInternalCommunicativeEvent(ArrayList<ACModel.elements.subElements.InternalCommunicativeEvent> internalCommunicativeEvent) {
+    public void setInternalCommunicativeEvent(ArrayList<CommunicativeEvent> internalCommunicativeEvent) {
         InternalCommunicativeEvent = internalCommunicativeEvent;
     }
 
-    public SpecialisedCommunicativeEvent(String idSistema, String idUsuario, String name, String type, String goals, String description, String channel, String temporalRestrictions, String frequency, String contexConstraints, String structuralConstraints, String treatment, String linkedCommunication, String linkedReaction, ArrayList<ACModel.elements.subElements.InternalCommunicativeEvent> internalCommunicativeEvent) {
+    public SpecialisedCommunicativeEvent(String idSistema, String idUsuario, String name, String type, String goals, String description, String channel, String temporalRestrictions, String frequency, String contexConstraints, String structuralConstraints, String treatment, String linkedCommunication, String linkedReaction, ArrayList<CommunicativeEvent> internalCommunicativeEvent) {
         this.idSistema = idSistema;
         this.idUsuario = idUsuario;
         this.name = name;
@@ -157,5 +155,26 @@ public class SpecialisedCommunicativeEvent {
         this.linkedCommunication = linkedCommunication;
         this.linkedReaction = linkedReaction;
         InternalCommunicativeEvent = internalCommunicativeEvent;
+    }
+
+    @Override
+    public String toString() {
+        return "SpecialisedCommunicativeEvent{" +
+                "idSistema='" + idSistema + '\'' +
+                ", idUsuario='" + idUsuario + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                ", goals='" + goals + '\'' +
+                ", description='" + description + '\'' +
+                ", channel='" + channel + '\'' +
+                ", temporalRestrictions='" + temporalRestrictions + '\'' +
+                ", frequency='" + frequency + '\'' +
+                ", contexConstraints='" + contexConstraints + '\'' +
+                ", structuralConstraints='" + structuralConstraints + '\'' +
+                ", treatment='" + treatment + '\'' +
+                ", linkedCommunication='" + linkedCommunication + '\'' +
+                ", linkedReaction='" + linkedReaction + '\'' +
+                ", InternalCommunicativeEvent=" + InternalCommunicativeEvent +
+                '}';
     }
 }
