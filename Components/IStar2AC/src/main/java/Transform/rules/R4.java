@@ -25,6 +25,7 @@ public class R4 extends Rule {
                 Tools t = new Tools();
                 String typeTarget = t.typeofInActors(IS.getRelations().get(i).getTarget(), IS.getNodes());
                 String typeOrigin = t.typeofInActors(IS.getRelations().get(i).getOrigin(), IS.getNodes());
+
                 if (
                         (
                                         typeOrigin.equals("NodeGoal")
@@ -50,11 +51,13 @@ public class R4 extends Rule {
                     if (typeOrigin.equals("NodeTask")) {
                         sr1 = typeTarget;
                     }
+                    String idTarget = t.alreadyID(IS.getRelations().get(i).getTarget(),AC.getActors());
+                    String idOrigin = t.alreadyID(IS.getRelations().get(i).getOrigin(),AC.getActors());
                     typeTarget = t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getType();
                     typeOrigin = t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getType();
                     //Origen
                     if (typeTarget.equals("Actor")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "Actor"));
+                        AC.getActors().add(new Actor(idTarget, "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "Actor"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("Actor");
@@ -62,7 +65,7 @@ public class R4 extends Rule {
                         AC.getTrazability().add(aux);
                     }
                     if (typeTarget.equals("Role")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "RelationalRole"));
+                        AC.getActors().add(new Actor(idTarget, "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "RelationalRole"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("RelationalRole");
@@ -70,7 +73,7 @@ public class R4 extends Rule {
                         AC.getTrazability().add(aux);
                     }
                     if (typeTarget.equals("Agent")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "RelationalAgent"));
+                        AC.getActors().add(new Actor(idTarget, "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "RelationalAgent"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("RelationalAgent");
@@ -79,7 +82,7 @@ public class R4 extends Rule {
                     }
                     //Destinatario
                     if (typeOrigin.equals("Actor")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "Actor"));
+                        AC.getActors().add(new Actor(idOrigin, "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "Actor"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("Actor");
@@ -87,7 +90,7 @@ public class R4 extends Rule {
                         AC.getTrazability().add(aux);
                     }
                     if (typeOrigin.equals("Role")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "RelationalRole"));
+                        AC.getActors().add(new Actor(idOrigin, "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "RelationalRole"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("RelationalRole");
@@ -95,7 +98,7 @@ public class R4 extends Rule {
                         AC.getTrazability().add(aux);
                     }
                     if (typeOrigin.equals("Agent")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "RelationalAgent"));
+                        AC.getActors().add(new Actor(idOrigin, "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "RelationalAgent"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("RelationalAgent");
@@ -132,8 +135,8 @@ public class R4 extends Rule {
                             new Actor("", "", "", "")
                     ));
                     MessageStructure messageStructure = new MessageStructure(name, "");
-                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction(IS.getRelations().get(i).getTarget() + IS.getRelations().get(i).getId(), "", name, "", IS.getRelations().get(i).getTarget(), IS.getRelations().get(i).getId(), messageStructure));
-                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction( IS.getRelations().get(i).getId()+IS.getRelations().get(i).getOrigin(), "", name, "", IS.getRelations().get(i).getId(), IS.getRelations().get(i).getOrigin(), messageStructure));
+                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction(idTarget + IS.getRelations().get(i).getId(), "", name, "", idTarget, IS.getRelations().get(i).getId(), messageStructure));
+                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction( IS.getRelations().get(i).getId()+idOrigin, "", name, "", IS.getRelations().get(i).getId(), idOrigin, messageStructure));
 
                 }
                 }

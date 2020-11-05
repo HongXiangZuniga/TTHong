@@ -1,5 +1,7 @@
 package Tools;
 
+import ACModel.ACModel;
+import ACModel.elements.Actor;
 import CommonModel.Node;
 import CommonModel.Relation;
 
@@ -37,6 +39,15 @@ public class Tools {
         return null;
     }
 
+    public String alreadyID(String id, ArrayList<Actor> actors){
+        for(int i =0;i<actors.size();i++){
+            if(id.equals(actors.get(i).getIdSistem())){
+                id = id+id;
+                i=0;
+            }
+        }
+        return id;
+    }
 
 
 }
