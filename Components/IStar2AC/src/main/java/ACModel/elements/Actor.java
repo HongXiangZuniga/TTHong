@@ -47,7 +47,7 @@ public class Actor {
 
     @Override
     public String toString() {
-        return "Actor{" +
+        return "AdapterActor{" +
                 "idSistem='" + idSistem + '\'' +
                 ", idUser='" + idUser + '\'' +
                 ", name='" + name + '\'' +

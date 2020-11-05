@@ -6,7 +6,6 @@ import CommonModel.Relation;
 public class RelationQuality extends Relation {
     private String text;
 
-    @Override
     public String getText() {
         return text;
     }

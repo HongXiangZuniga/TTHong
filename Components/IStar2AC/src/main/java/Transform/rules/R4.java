@@ -11,45 +11,50 @@ import Tools.Tools;
 
 import java.util.ArrayList;
 
-public class R2 extends Rule {
+public class R4 extends Rule {
 
     @Override
     public void run(IstarModel IS, ACModel AC) {
-
         for (int i = 0; i < IS.getRelations().size(); i++) {
             if (IS.getRelations().get(i).getType().equals("Goal")
                     || IS.getRelations().get(i).getType().equals("Quality")
                     || IS.getRelations().get(i).getType().equals("Resource")
                     || IS.getRelations().get(i).getType().equals("Task")
             ) {
-                String name = "";
+                String name ="";
                 Tools t = new Tools();
                 String typeTarget = t.typeofInActors(IS.getRelations().get(i).getTarget(), IS.getNodes());
                 String typeOrigin = t.typeofInActors(IS.getRelations().get(i).getOrigin(), IS.getNodes());
                 if (
                         (
-                                typeOrigin.equals("NodeGoal")
+                                        typeOrigin.equals("NodeGoal")
                                         || typeOrigin.equals("NodeQuality")
                                         || typeOrigin.equals("NodeResource")
                                         || typeOrigin.equals("NodeTask")
                         )
                                 &&
                                 (
-                                        typeTarget.equals("Actor")
-                                                || typeTarget.equals("Agent")
-                                                || typeTarget.equals("Role")
+                                                typeTarget.equals("NodeGoal")
+                                                || typeTarget.equals("NodeQuality")
+                                                || typeTarget.equals("NodeResource")
+                                                || typeTarget.equals("NodeTask")
                                 )
 
                 ) {
+
                     String sr1 = "";
-                    if (typeOrigin.equals("NodeTask")) {
-                        sr1 = typeOrigin;
+                    if (typeTarget.equals("NodeTask")) {
+                        sr1 = typeTarget;
                     }
-                    System.out.println(typeOrigin);
-                    System.out.println(IS.getRelations().get(i).getOrigin());
+
+                    if (typeOrigin.equals("NodeTask")) {
+                        sr1 = typeTarget;
+                    }
+                    typeTarget = t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getType();
                     typeOrigin = t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getType();
+                    //Origen
                     if (typeTarget.equals("Actor")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.nameInActors(IS.getRelations().get(i).getTarget(),IS.getNodes()), "Actor"));
+                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "Actor"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("Actor");
@@ -57,7 +62,7 @@ public class R2 extends Rule {
                         AC.getTrazability().add(aux);
                     }
                     if (typeTarget.equals("Role")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.nameInActors(IS.getRelations().get(i).getTarget(),IS.getNodes()),  "RelationalRole"));
+                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "RelationalRole"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("RelationalRole");
@@ -65,16 +70,16 @@ public class R2 extends Rule {
                         AC.getTrazability().add(aux);
                     }
                     if (typeTarget.equals("Agent")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.nameInActors(IS.getRelations().get(i).getTarget(),IS.getNodes()), "RelationalAgent"));
+                        AC.getActors().add(new Actor(IS.getRelations().get(i).getTarget(), "", t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "RelationalAgent"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("RelationalAgent");
                         aux.add(IS.getRelations().get(i).getId());
                         AC.getTrazability().add(aux);
                     }
-
+                    //Destinatario
                     if (typeOrigin.equals("Actor")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "", t.nameInActors(IS.getRelations().get(i).getOrigin(),IS.getNodes()), "Actor"));
+                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "Actor"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("Actor");
@@ -82,15 +87,15 @@ public class R2 extends Rule {
                         AC.getTrazability().add(aux);
                     }
                     if (typeOrigin.equals("Role")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "",  t.nameInActors(IS.getRelations().get(i).getOrigin(),IS.getNodes()), "RelationalRole"));
+                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "RelationalRole"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
-                        aux.add("RelatonalRole");
+                        aux.add("RelationalRole");
                         aux.add(IS.getRelations().get(i).getId());
                         AC.getTrazability().add(aux);
                     }
                     if (typeOrigin.equals("Agent")) {
-                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "",  t.nameInActors(IS.getRelations().get(i).getOrigin(),IS.getNodes()), "RelationalAgent"));
+                        AC.getActors().add(new Actor(IS.getRelations().get(i).getOrigin(), "", t.inNode(IS.getRelations().get(i).getOrigin(),IS.getNodes()).getName(), "RelationalAgent"));
                         ArrayList<String> aux = new ArrayList<>();
                         aux.add(IS.getRelations().get(i).getType());
                         aux.add("RelationalAgent");
@@ -129,8 +134,9 @@ public class R2 extends Rule {
                     MessageStructure messageStructure = new MessageStructure(name, "");
                     AC.getCommunicativeInteractions().add(new CommunicativeInteraction(IS.getRelations().get(i).getTarget() + IS.getRelations().get(i).getId(), "", name, "", IS.getRelations().get(i).getTarget(), IS.getRelations().get(i).getId(), messageStructure));
                     AC.getCommunicativeInteractions().add(new CommunicativeInteraction( IS.getRelations().get(i).getId()+IS.getRelations().get(i).getOrigin(), "", name, "", IS.getRelations().get(i).getId(), IS.getRelations().get(i).getOrigin(), messageStructure));
+
+                }
                 }
             }
         }
     }
-}

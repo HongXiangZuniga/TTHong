@@ -79,7 +79,7 @@ public class CommunicativeInteraction {
 
     @Override
     public String toString() {
-        return "CommunicativeInteraction{" +
+        return "AdapterCommunicativeInteraction{" +
                 "idSistem='" + idSistem + '\'' +
                 ", idUser='" + idUser + '\'' +
                 ", name='" + name + '\'' +

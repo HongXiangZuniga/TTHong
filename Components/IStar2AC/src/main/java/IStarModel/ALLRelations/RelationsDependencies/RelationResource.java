@@ -5,7 +5,6 @@ import CommonModel.Relation;
 public class RelationResource extends Relation {
     private String text;
 
-    @Override
     public String getText() {
         return text;
     }

@@ -49,7 +49,7 @@ public class PrecedenceRelation {
 
     @Override
     public String toString() {
-        return "PrecedenceRelation{" +
+        return "AdapterPrecedenceRelation{" +
                 "idSistem='" + idSistem + '\'' +
                 ", type='" + type + '\'' +
                 ", source='" + source + '\'' +

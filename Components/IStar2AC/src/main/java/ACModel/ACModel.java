@@ -10,6 +10,15 @@ public class ACModel {
     private ArrayList<SpecialisedCommunicativeEvent> specialisedCommunicativeEvents;
     private ArrayList<CommunicativeInteraction> communicativeInteractions;
     private ArrayList<PrecedenceRelation> precedenceRelations;
+    private ArrayList<ArrayList<String>> trazability;
+
+    public ArrayList<ArrayList<String>> getTrazability() {
+        return trazability;
+    }
+
+    public void setTrazability(ArrayList<ArrayList<String>> trazability) {
+        this.trazability = trazability;
+    }
 
     public ArrayList<Actor> getActors() {
         return actors;
@@ -57,11 +66,12 @@ public class ACModel {
         this.specialisedCommunicativeEvents = new ArrayList<>();
         this.communicativeInteractions = new ArrayList<>();
         this.precedenceRelations = new ArrayList<>();
+        this.trazability = new ArrayList<>();
     }
 
     @Override
     public String toString() {
-        return "ACModel{" +
+        return "AdapterACModel{" +
                 "actors=" + actors +
                 ", communicativeEvents=" + communicativeEvents +
                 ", specialisedCommunicativeEvents=" + specialisedCommunicativeEvents +

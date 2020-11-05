@@ -1,10 +1,14 @@
-package ACModel.elements;
+package AdapterModel.elements.subElements;
+
+
+import ACModel.elements.CommunicativeEvent;
+import Adapter.ToolIDSupport;
 
 import java.util.ArrayList;
 
-public class CommunicativeEvent {
-    private String idSistem;
-    private String idUser;
+public class InternalCommunicativeEvent {
+    private String unique;
+    private String identifier;
     private String name;
     private String type;
     private String description;
@@ -16,22 +20,22 @@ public class CommunicativeEvent {
     private String treatment;
     private String linkedCommunication;
     private String linkedReaction;
-    private Actor supportActor;
+    private ArrayList<SupportActor> supportActor;
 
-    public String getIdSistem() {
-        return idSistem;
+    public String getUnique() {
+        return unique;
     }
 
-    public void setIdSistem(String idSistem) {
-        this.idSistem = idSistem;
+    public void setUnique(String unique) {
+        this.unique = unique;
     }
 
-    public String getIdUser() {
-        return idUser;
+    public String getIdentifier() {
+        return identifier;
     }
 
-    public void setIdUser(String idUser) {
-        this.idUser = idUser;
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
     public String getName() {
@@ -64,6 +68,14 @@ public class CommunicativeEvent {
 
     public void setChanel(String chanel) {
         this.chanel = chanel;
+    }
+
+    public String getGoals() {
+        return goals;
+    }
+
+    public void setGoals(String goals) {
+        this.goals = goals;
     }
 
     public String getTemporalRestrictions() {
@@ -114,36 +126,37 @@ public class CommunicativeEvent {
         this.linkedReaction = linkedReaction;
     }
 
-    public Actor getSupportActor() {
+    public ArrayList<SupportActor> getSupportActor() {
         return supportActor;
     }
 
-    public void setSupportActor(Actor supportActor) {
+    public void setSupportActor(ArrayList<SupportActor> supportActor) {
         this.supportActor = supportActor;
     }
 
-    public String getGoals() {
-        return goals;
-    }
-
-    public void setGoals(String goals) {
-        this.goals = goals;
-    }
-
-    public CommunicativeEvent(String idSistem, String idUser, String name, String type, String description, String chanel,String goals, String temporalRestrictions, String frequency, String contextConstraints, String treatment, String linkedCommunication, String linkedReaction, Actor supportActor) {
-        this.idSistem = idSistem;
-        this.idUser = idUser;
-        this.name = name;
-        this.type = type;
-        this.description = description;
-        this.goals = goals;
-        this.chanel = chanel;
-        this.temporalRestrictions = temporalRestrictions;
-        this.frequency = frequency;
-        this.contextConstraints = contextConstraints;
-        this.treatment = treatment;
-        this.linkedCommunication = linkedCommunication;
-        this.linkedReaction = linkedReaction;
-        this.supportActor = supportActor;
+    public InternalCommunicativeEvent(CommunicativeEvent communicativeEvent) {
+        ToolIDSupport td = new ToolIDSupport();
+        ArrayList<SupportActor> aux = new ArrayList<>();
+        this.unique = communicativeEvent.getIdSistem();
+        this.identifier = communicativeEvent.getIdUser();
+        this.name = communicativeEvent.getName();
+        this.type = "Internal Communicative Event";
+        this.description = communicativeEvent.getDescription();
+        this.chanel = communicativeEvent.getChanel();
+        this.goals = communicativeEvent.getGoals();
+        this.temporalRestrictions = communicativeEvent.getTemporalRestrictions();
+        this.frequency = communicativeEvent.getFrequency();
+        this.contextConstraints = communicativeEvent.getContextConstraints();
+        this.treatment = communicativeEvent.getTreatment();
+        this.linkedCommunication = communicativeEvent.getLinkedCommunication();
+        this.linkedReaction = communicativeEvent.getLinkedReaction();
+        aux.add(new SupportActor(
+                td.toString(),
+                "",
+                "",
+                ""
+                )
+        );
+        this.supportActor = aux;
     }
 }

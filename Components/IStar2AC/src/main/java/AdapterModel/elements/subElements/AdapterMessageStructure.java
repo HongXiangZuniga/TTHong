@@ -1,8 +1,8 @@
-package ACModel.elements.subElements;
+package AdapterModel.elements.subElements;
 
 import java.util.ArrayList;
 
-public class MessageStructure {
+public class AdapterMessageStructure {
     private String name;
     private String type;
     private ArrayList<String> children = new ArrayList<>();//Por ahora sera String
@@ -31,9 +31,9 @@ public class MessageStructure {
         this.children = children;
     }
 
-    public MessageStructure(String name, String type) {
+    public AdapterMessageStructure(String name, String type, ArrayList<String> children) {
         this.name = name;
-        this.type = type;
-        this.children = new ArrayList<>();
+        this.type = "Structure";
+        this.children = children;
     }
 }

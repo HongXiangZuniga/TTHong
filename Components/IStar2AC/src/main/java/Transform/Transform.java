@@ -12,7 +12,9 @@ public class Transform {
 
     public void run(IstarModel IS, ACModel AC) {
     for(int i =0;i<this.rules.size();i++){
+        System.out.println("run: r"+(i+1));
         this.rules.get(i).run(IS,AC);
+
     }
 
     }
@@ -21,6 +23,7 @@ public class Transform {
         this.rules.add(new R1());
         this.rules.add(new R2());
         this.rules.add(new R3());
-
+        this.rules.add(new R4());
+        //this.rules.add(new R5());
     }
 }

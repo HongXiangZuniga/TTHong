@@ -159,7 +159,7 @@ public class SpecialisedCommunicativeEvent {
 
     @Override
     public String toString() {
-        return "SpecialisedCommunicativeEvent{" +
+        return "AdapterSpecialisedCommunicativeEvent{" +
                 "idSistema='" + idSistema + '\'' +
                 ", idUsuario='" + idUsuario + '\'' +
                 ", name='" + name + '\'' +
