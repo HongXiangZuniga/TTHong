@@ -2,7 +2,6 @@
 FROM python:3.8
 
 # set the working directory in the container
-WORKDIR /code
 
 # copy the dependencies file to the working directory
 COPY requirements.txt .
@@ -11,7 +10,7 @@ COPY requirements.txt .
 RUN pip install Flask
 
 # copy the content of the local src directory to the working directory
-COPY src/ .
+ADD . .
 
 # command to run on container star
-CMD [ "python", "./OOMValidatorServices.py" ]
+CMD [ "python", "src/OOMValidatorServices.py" ]

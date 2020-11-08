@@ -14,7 +14,7 @@ def links():
     dict.update(agregar)
     agregar={"ACValidated":os.getenv("ACVALIDATER_SERVICES")}
     dict.update(agregar)
-    agregar={"ACValidated":os.getenv("AC_2_OOM")}
+    agregar={"AC2OOM":os.getenv("AC_2_OOM")}
     dict.update(agregar)
     agregar={"OOMValidated":os.getenv("OOM_VALIDATER_SERVICES")}
     dict.update(agregar)

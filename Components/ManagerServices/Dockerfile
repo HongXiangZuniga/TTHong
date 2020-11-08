@@ -12,7 +12,7 @@ RUN pip install Flask
 RUN pip install requests
 
 # copy the content of the local src directory to the working directory
-COPY src/ .
+ADD . .
 
 # command to run on container star
-CMD [ "python", "./ManagerSerives.py" ]
+CMD [ "python", "src/ManagerSerives.py" ]

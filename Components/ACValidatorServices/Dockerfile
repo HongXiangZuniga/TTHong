@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # set the working directory in the container
-WORKDIR /code
+ADD . .
 
 # copy the dependencies file to the working directory
 
@@ -10,7 +10,6 @@ WORKDIR /code
 RUN pip install flask
 
 # copy the content of the local src directory to the working directory
-COPY src/ .
 
 # command to run on container star
-CMD [ "python", "./ACValidatorServices.py" ]
+CMD [ "python", "src/ACValidatorServices.py" ]
