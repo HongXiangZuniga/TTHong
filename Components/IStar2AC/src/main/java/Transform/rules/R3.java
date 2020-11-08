@@ -21,7 +21,6 @@ public class R3 extends Rule {
                     || IS.getRelations().get(i).getType().equals("Resource")
                     || IS.getRelations().get(i).getType().equals("Task")
             ) {
-                String name ="";
                 Tools t = new Tools();
                 String typeTarget = t.typeofInActors(IS.getRelations().get(i).getTarget(), IS.getNodes());
                 String typeOrigin = t.typeofInActors(IS.getRelations().get(i).getOrigin(), IS.getNodes());
@@ -42,11 +41,61 @@ public class R3 extends Rule {
                 ) {
                     String sr1 = "";
                     if (typeTarget.equals("NodeTask")) {
-                        sr1 = typeTarget;
+                        sr1 = t.nameInActors(IS.getRelations().get(i).getTarget(), IS.getNodes());
                     }
                     typeTarget = t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getType();
                     String idTarget = t.alreadyID(IS.getRelations().get(i).getTarget(),AC.getActors());
                     String idOrigin = t.alreadyID(IS.getRelations().get(i).getOrigin(),AC.getActors());
+
+                    String name ="";
+                    String inte="";
+                    String msg ="";
+                    if(IS.getRelations().get(i).getType().equals("Resource")){
+                        if(sr1.equals("")){
+                            name = IS.getRelations().get(i).getText();;
+                        }else{
+                            name = sr1;
+                        }
+                        msg = IS.getRelations().get(i).getText() + " info";
+                        inte="Provision";
+                    }
+
+                    if(IS.getRelations().get(i).getType().equals("Task")){
+                        if(sr1.equals("")){
+                            name = "Acomplish "+IS.getRelations().get(i).getText();;
+                        }else{
+                            name = sr1;
+                        }
+                        msg = IS.getRelations().get(i).getText() + " accomplishment";
+                        inte="Acomplishment";
+
+                    }
+                    if(IS.getRelations().get(i).getType().equals("Quality")){
+                        if(sr1.equals("")){
+                            name = "Satisfy "+IS.getRelations().get(i).getText();;
+                        }else{
+                            name = sr1;
+                        }
+                        msg = IS.getRelations().get(i).getText() + " satisfaction";
+                        inte="Satisfaction";
+
+                    }
+
+                    if(IS.getRelations().get(i).getType().equals("Goal")){
+                        if(sr1.equals("")){
+                            name = "Attain "+IS.getRelations().get(i).getText();;
+                        }else{
+                            name = sr1;
+                        }
+                        msg = IS.getRelations().get(i).getText() + " attainment";
+                        inte="Attainment";
+
+                    }
+
+
+
+
+
                     if (typeTarget.equals("Actor")) {
                         AC.getActors().add(new Actor(idTarget, "",  t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "Actor"));
                         ArrayList<String> aux = new ArrayList<>();
@@ -96,23 +145,11 @@ public class R3 extends Rule {
                         aux.add(IS.getRelations().get(i).getId());
                         AC.getTrazability().add(aux);
                     }
-                    if(IS.getRelations().get(i).getType().equals("Goal")){
-                        name ="Atain "+IS.getRelations().get(i).getText();
-                    }
-                    if(IS.getRelations().get(i).getType().equals("Resource")){
-                        name ="Obtained "+IS.getRelations().get(i).getText();
-                    }
-                    if(IS.getRelations().get(i).getType().equals("Quality")){
-                        name ="Satisficed "+IS.getRelations().get(i).getText();
-                    }
-                    if(IS.getRelations().get(i).getType().equals("Task")){
-                        name ="Completed "+IS.getRelations().get(i).getText();
-                    }
                     ArrayList<CommunicativeEvent> internalCommunicativeEvent = new ArrayList<>();
                     AC.getCommunicativeEvents().add(new CommunicativeEvent(
                             IS.getRelations().get(i).getId(),
                             "",
-                            sr1.substring(4),
+                            name,
                             "",
                             "",
                             "",
@@ -125,9 +162,9 @@ public class R3 extends Rule {
                             "",
                             new Actor("", "", "", "")
                     ));
-                    MessageStructure messageStructure = new MessageStructure(name, "");
-                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction(idTarget + IS.getRelations().get(i).getId(), "", name, "", idTarget, IS.getRelations().get(i).getId(), messageStructure));
-                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction( IS.getRelations().get(i).getId()+idOrigin, "", name, "", IS.getRelations().get(i).getId(), idOrigin, messageStructure));
+                    MessageStructure messageStructure = new MessageStructure(msg, "");
+                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction(idTarget + IS.getRelations().get(i).getId(), "", msg, "", idTarget, IS.getRelations().get(i).getId(), messageStructure));
+                    AC.getCommunicativeInteractions().add(new CommunicativeInteraction( IS.getRelations().get(i).getId()+idOrigin, "", msg, "", IS.getRelations().get(i).getId(), idOrigin, messageStructure));
 
                 }
             }

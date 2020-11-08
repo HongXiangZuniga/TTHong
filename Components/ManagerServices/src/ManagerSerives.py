@@ -29,6 +29,9 @@ def main():
     if(nextstep=="IStarValidated"):
         aux = Go.to(content,url)
         content["model_i"]["validator"]=aux["validator"]
+    elif(nextstep=="IStar2AC"):
+        aux = Go.to(content,url)
+        content["model_ac"]["model"]=aux["model"]
     else:
         content = Go.to(content,url)
         print("aca paso")

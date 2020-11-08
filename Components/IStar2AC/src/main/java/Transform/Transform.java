@@ -24,6 +24,6 @@ public class Transform {
         this.rules.add(new R2());
         this.rules.add(new R3());
         this.rules.add(new R4());
-        //this.rules.add(new R5());
+        this.rules.add(new R5());
     }
 }

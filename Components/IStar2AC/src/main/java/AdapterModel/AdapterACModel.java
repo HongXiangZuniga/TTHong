@@ -16,6 +16,10 @@ public class AdapterACModel {
         return Actors;
     }
 
+    public ArrayList<ArrayList<String>> getTrazability() {
+        return trazability;
+    }
+
     public void setActors(ArrayList<AdapterActor> actors) {
         Actors = actors;
     }
