@@ -66,7 +66,7 @@ public class ProjectController {
 
     @RequestMapping("/model")
     public Map<String, String> model(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
-        String key = "abc";
+        String key = System.getenv("SECRET_KEY");
         Boolean updateState = true;
         //Cargado de datos del JSON de Entrada.
         try {

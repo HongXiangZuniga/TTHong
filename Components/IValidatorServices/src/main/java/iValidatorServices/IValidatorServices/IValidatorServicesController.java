@@ -17,7 +17,7 @@ public class IValidatorServicesController {
     @RequestMapping("/")
     public Map<String, ArrayList<String>> nextModel(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
         try {
-            String secretKey = "abc";
+            String secretKey = System.getenv("SECRET_KEY");
             IstarModel istarModel = new IstarModel();
             JSONObject JsonIModel = new JSONObject(body).getJSONObject("model_i");
             JSONArray actors = new JSONObject(body).getJSONObject("model_i").getJSONObject("model").getJSONArray("actors");
