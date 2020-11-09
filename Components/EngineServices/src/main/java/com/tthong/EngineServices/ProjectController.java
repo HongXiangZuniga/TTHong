@@ -34,7 +34,7 @@ public class ProjectController {
         return project;
     }
 
-    @RequestMapping("/Next")
+    @RequestMapping("/next")
     public Map<String, String> nextModel(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
         try {
             Steps steps = new Steps();
@@ -64,7 +64,7 @@ public class ProjectController {
 
 
 
-    @RequestMapping("/Model")
+    @RequestMapping("/model")
     public Map<String, String> model(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
         String key = "abc";
         Boolean updateState = true;
