@@ -2,6 +2,7 @@ package Tools;
 
 import ACModel.ACModel;
 import ACModel.elements.Actor;
+import ACModel.elements.PrecedenceRelation;
 import CommonModel.Node;
 import CommonModel.Relation;
 
@@ -49,5 +50,13 @@ public class Tools {
         return id;
     }
 
+    public boolean alreadyPrecedence(String source,String target, ArrayList<PrecedenceRelation> pcr){
+        for(int i=0;i<pcr.size();i++){
+            if(pcr.get(i).getSource().equals(source)&&pcr.get(i).getTarget().equals(target)){
+                return false;
+            }
+        }
+        return true;
+    }
 
 }

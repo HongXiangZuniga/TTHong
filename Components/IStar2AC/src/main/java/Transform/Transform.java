@@ -20,6 +20,7 @@ public class Transform {
     }
 
     public Transform() {
+        this.rules.add(new R0());
         this.rules.add(new R1());
         this.rules.add(new R2());
         this.rules.add(new R3());

@@ -13,30 +13,6 @@ import Tools.Tools;
 public class R1 extends Rule {
 
     public void run(IstarModel IS, ACModel AC) {
-        AC.getActors().add(new Actor("A0",
-                "0",
-                "Admin",
-                "actor")
-        );
-        AC.getCommunicativeEvents().add(new CommunicativeEvent(
-                "A1",
-                "",
-                "Register",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                "",
-                new Actor("", "", "", "")
-        ));
-        AC.getCommunicativeInteractions().add(new CommunicativeInteraction("A2", "", "RegisterInformation", "", "A0", "A1", new MessageStructure("RegisterInformation", "")));
-
-
         for (int i = 0; i < IS.getRelations().size(); i++) {
             if
             (    IS.getRelations().get(i).getType().equals("Goal")
