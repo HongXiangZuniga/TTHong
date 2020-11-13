@@ -14,7 +14,7 @@ public class RelationTask extends Relation {
     }
 
     public RelationTask(String id, String origin, String target, String text) {
-        super(id, origin, target,"task");
+        super(id, origin, target,"Task");
         this.text=text;
     }
 

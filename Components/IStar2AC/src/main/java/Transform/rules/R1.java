@@ -44,8 +44,6 @@ public class R1 extends Rule {
                     || IS.getRelations().get(i).getType().equals("Resource")
                     || IS.getRelations().get(i).getType().equals("Task")
             )
-
-
             {
                 Tools t = new Tools();
                 String typeTarget = t.typeofInActors(IS.getRelations().get(i).getTarget(), IS.getNodes());
@@ -73,7 +71,7 @@ public class R1 extends Rule {
                     String inte="";
                     String msg ="";
                     if(IS.getRelations().get(i).getType().equals("Resource")){
-                        name = IS.getRelations().get(i).getText();
+                        name ="Provide "+IS.getRelations().get(i).getText();
                         msg = IS.getRelations().get(i).getText() + " info";
                         inte="provision";
                     }

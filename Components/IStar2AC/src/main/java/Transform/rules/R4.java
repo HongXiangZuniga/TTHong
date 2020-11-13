@@ -43,12 +43,12 @@ public class R4 extends Rule {
                 ) {
 
                     String sr1 = "";
-                    if (typeTarget.equals("NodeTask")) {
-                        sr1 = t.nameInActors(IS.getRelations().get(i).getTarget(), IS.getNodes());
-                    }
-
                     if (typeOrigin.equals("NodeTask")) {
                         sr1 = t.nameInActors(IS.getRelations().get(i).getOrigin(), IS.getNodes());
+                    }
+
+                    if (typeTarget.equals("NodeTask")) {
+                        sr1 = t.nameInActors(IS.getRelations().get(i).getTarget(), IS.getNodes());
                     }
                     String idTarget = t.alreadyID(IS.getRelations().get(i).getTarget(),AC.getActors());
                     String idOrigin = t.alreadyID(IS.getRelations().get(i).getOrigin(),AC.getActors());
@@ -60,7 +60,7 @@ public class R4 extends Rule {
                     String msg ="";
                     if(IS.getRelations().get(i).getType().equals("Resource")){
                         if(sr1.equals("")){
-                            name = IS.getRelations().get(i).getText();;
+                            name ="Provide "+IS.getRelations().get(i).getText();
                         }else{
                             name = sr1;
                         }

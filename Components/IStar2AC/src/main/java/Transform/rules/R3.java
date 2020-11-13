@@ -52,7 +52,7 @@ public class R3 extends Rule {
                     String msg ="";
                     if(IS.getRelations().get(i).getType().equals("Resource")){
                         if(sr1.equals("")){
-                            name = IS.getRelations().get(i).getText();;
+                            name ="Provide "+IS.getRelations().get(i).getText();
                         }else{
                             name = sr1;
                         }
@@ -91,10 +91,6 @@ public class R3 extends Rule {
                         inte="Attainment";
 
                     }
-
-
-
-
 
                     if (typeTarget.equals("Actor")) {
                         AC.getActors().add(new Actor(idTarget, "",  t.inNode(IS.getRelations().get(i).getTarget(),IS.getNodes()).getName(), "Actor"));

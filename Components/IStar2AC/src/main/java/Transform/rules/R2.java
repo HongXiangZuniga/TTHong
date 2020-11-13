@@ -52,7 +52,7 @@ public class R2 extends Rule {
                     String msg ="";
                     if(IS.getRelations().get(i).getType().equals("Resource")){
                         if(sr1.equals("")){
-                            name = IS.getRelations().get(i).getText();;
+                            name ="Provide "+IS.getRelations().get(i).getText();
                         }else{
                             name = sr1;
                         }

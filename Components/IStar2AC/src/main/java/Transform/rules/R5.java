@@ -16,7 +16,7 @@ public class R5 extends Rule {
         for(int j=i+1;i<IS.getRelations().size()-1;i++){
             if(IS.getRelations().get(i).getText().equals(IS.getRelations().get(j).getText())){
                 if(IS.getRelations().get(i).getTarget().equals(IS.getRelations().get(j).getOrigin())){
-                    AC.getPrecedenceRelations().add((new PrecedenceRelation(IS.getRelations().get(i).getId()+IS.getRelations().get(j).getId(),"",IS.getRelations().get(i).getId(),IS.getRelations().get(j).getId())));
+                    AC.getPrecedenceRelations().add((new PrecedenceRelation(IS.getRelations().get(i).getId()+IS.getRelations().get(j).getId(),"",IS.getRelations().get(j).getId(),IS.getRelations().get(i).getId())));
 
                 }
             }
