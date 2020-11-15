@@ -28,7 +28,7 @@ Los servicios, fueron desarollados en distintos lenguajes y cada uno posee un pu
   + Java 11
 - IStar2ACServices:
   + Port: 8026
-  + Esqueleto Python 3
+  + Java 11
 - ACValidatorServices:
   + Port: 8027
   + Esqueleto Python 3
@@ -76,18 +76,21 @@ Y recibira un proyecto vanilla:
     "id": "ID del proyecto"
 }
 ```
+# Variables de entornos para configurar
+
++ENGINE_NEXT= URL
++ENGINE_INIT= URL
++ENGINE_SERVICES= URL
++ISTAR_VALIDATOR_SERVICES= URL
++ISTAR_2_AC= URL
++ACVALIDATER_SERVICES= URL
++AC_2_OOM= URL
++OOM_VALIDATER_SERVICES= URL
++SECRET_KEY= Key para comprobar si el elemento esta validado
+
+
 # Elementos Comunes de los modelos
 
 + date: Fecha de Creacion del Modelo
 + validator: Un arreglo con los errores asociados a la validacion, si este esta validado recibira una en la pos 0 una SecretKey Que debe ser Acordada en el sistema, por defecto es 'abc'
 + model: Lo asociado a cada modelo.
-
-# IstarModel
-  - actors
-  - links
-  - dependencies
-
-# ACModel
-
-# OOModel
-
