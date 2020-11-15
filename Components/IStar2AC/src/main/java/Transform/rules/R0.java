@@ -17,7 +17,7 @@ public class R0 extends Rule{
                 AC.getCommunicativeEvents().add(new CommunicativeEvent(
                         "A1"+IS.getNodes().get(i).getName(),
                         "",
-                        "Register "+IS.getNodes().get(i).getName() ,
+                        "Data Base "+IS.getNodes().get(i).getName() ,
                         "",
                         "",
                         "",
