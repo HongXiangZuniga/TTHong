@@ -14,7 +14,7 @@ Este repositorio en su version actual, presenta una arquitectura basada en micro
 
 # Servicios/Componentes
 
-Los servicios, fueron desarollados en distintos lenguajes y cada uno posee un puerto asociado para un dominio, estos son configurables en el archivo "Links", en el ManagerServices el cual se encarga de manejar el flujo de trabajo.
+Los servicios, fueron desarollados en distintos lenguajes y cada uno posee un puerto asociado para un dominio, estos son configurables en el ENV y utilizados por el Manager.
 
 - ManagerServices:
   + Port: 8022
