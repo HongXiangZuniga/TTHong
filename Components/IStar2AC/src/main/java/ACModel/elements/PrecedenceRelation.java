@@ -46,4 +46,14 @@ public class PrecedenceRelation {
         this.source = source;
         this.target = target;
     }
+
+    @Override
+    public String toString() {
+        return "AdapterPrecedenceRelation{" +
+                "idSistem='" + idSistem + '\'' +
+                ", type='" + type + '\'' +
+                ", source='" + source + '\'' +
+                ", target='" + target + '\'' +
+                '}';
+    }
 }

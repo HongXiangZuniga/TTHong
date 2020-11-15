@@ -48,6 +48,10 @@ public class Relation {
     public boolean isValid(){
         return true;
     }
+
+    public String getText() {
+        return"";
+    }
 }
 
 

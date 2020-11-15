@@ -3,8 +3,19 @@ package IStarModel.ALLRelations.RelationsDependencies;
 import CommonModel.Relation;
 
 public class RelationTask extends Relation {
-    public RelationTask(String id, String origin, String target) {
-        super(id, origin, target,"task");
+    private String text;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public RelationTask(String id, String origin, String target, String text) {
+        super(id, origin, target,"Task");
+        this.text=text;
     }
 
     //Validacion Individual

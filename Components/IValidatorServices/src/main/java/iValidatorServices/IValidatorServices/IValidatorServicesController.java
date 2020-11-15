@@ -17,7 +17,7 @@ public class IValidatorServicesController {
     @RequestMapping("/")
     public Map<String, ArrayList<String>> nextModel(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
         try {
-            String secretKey = "abc";
+            String secretKey = System.getenv("SECRET_KEY");
             IstarModel istarModel = new IstarModel();
             JSONObject JsonIModel = new JSONObject(body).getJSONObject("model_i");
             JSONArray actors = new JSONObject(body).getJSONObject("model_i").getJSONObject("model").getJSONArray("actors");
@@ -29,6 +29,11 @@ public class IValidatorServicesController {
             HashMap<String, ArrayList<String>> maperror = new HashMap<>();
             toResponse toresponse = new toResponse();
             toresponse.transform(istarModel.getErrors(), maperror,secretKey);
+            System.out.println("-------");
+            for(int i=0;i<istarModel.getNodes().size();i++){
+                System.out.println(istarModel.getNodes().get(i).getName());
+            }
+            System.out.println("-------");
             return maperror;
         } catch (Exception e) {
             HashMap<String, ArrayList<String>> maperror = new HashMap<>();

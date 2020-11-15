@@ -31,9 +31,9 @@ public class MessageStructure {
         this.children = children;
     }
 
-    public MessageStructure(String name, String type, ArrayList<String> children) {
+    public MessageStructure(String name, String type) {
         this.name = name;
         this.type = type;
-        this.children = children;
+        this.children = new ArrayList<>();
     }
 }

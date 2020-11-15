@@ -1,7 +1,5 @@
 FROM openjdk
 
-WORKDIR /test
+ADD . .
 
-COPY ./ ./
-
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["java","-jar","/target/apigateway-0.0.1-SNAPSHOT.jar"]

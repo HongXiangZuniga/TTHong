@@ -44,4 +44,15 @@ public class Actor {
         this.name = name;
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "AdapterActor{" +
+                "idSistem='" + idSistem + '\'' +
+                ", idUser='" + idUser + '\'' +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
+

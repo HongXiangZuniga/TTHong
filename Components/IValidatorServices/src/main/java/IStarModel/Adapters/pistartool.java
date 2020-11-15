@@ -32,7 +32,7 @@ public class pistartool {
                 actor = actors.getJSONObject(i);
                 if(actor.getString("type").equals("istar.Role")){
                     if(actor.has("nodes")){
-                        Nodes.add(new Role(actor.getString("id"),actor.getString("text"),actor.getJSONArray("nodes")));
+                        Role aux = new Role(actor.getString("id"),actor.getString("text"),actor.getJSONArray("nodes"));
                         JSONArray submodel = new JSONArray();
                         JSONObject subactor = new JSONObject();
                         submodel = actor.getJSONArray("nodes");
@@ -40,24 +40,29 @@ public class pistartool {
                             subactor = submodel.getJSONObject(j);
                             if(subactor.getString("type").equals("istar.Goal")){
                                 Nodes.add(new NodeGoal(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeGoal(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Task")){
                                 Nodes.add(new NodeTask(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeTask(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Quality")){
                                 Nodes.add(new NodeQuality(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeQuality(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Resource")){
                                 Nodes.add(new NodeResource(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeResource(subactor.getString("id"),subactor.getString("text")));
                             }
                         }
+                        Nodes.add(aux);
                     }else{
                         Nodes.add(new Role(actor.getString("id"),actor.getString("text")));
                     }
                 }
                 if(actor.getString("type").equals("istar.Actor")){
                     if(actor.has("nodes")){
-                        Nodes.add(new Actor(actor.getString("id"),actor.getString("text"),actor.getJSONArray("nodes")));
+                        Actor aux = new Actor(actor.getString("id"),actor.getString("text"),actor.getJSONArray("nodes"));
                         JSONArray submodel = new JSONArray();
                         JSONObject subactor = new JSONObject();
                         submodel = actor.getJSONArray("nodes");
@@ -65,24 +70,29 @@ public class pistartool {
                             subactor = submodel.getJSONObject(j);
                             if(subactor.getString("type").equals("istar.Goal")){
                                 Nodes.add(new NodeGoal(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeGoal(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Task")){
                                 Nodes.add(new NodeTask(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeTask(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Quality")){
                                 Nodes.add(new NodeQuality(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeQuality(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Resource")){
                                 Nodes.add(new NodeResource(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeResource(subactor.getString("id"),subactor.getString("text")));
                             }
                         }
+                        Nodes.add(aux);
                     }else{
                         Nodes.add(new Actor(actor.getString("id"),actor.getString("text")));
                     }
                 }
                 if(actor.getString("type").equals("istar.Agent")){
                     if(actor.has("nodes")){
-                        Nodes.add(new Agent(actor.getString("id"),actor.getString("text"),actor.getJSONArray("nodes")));
+                        Agent aux = new Agent(actor.getString("id"),actor.getString("text"),actor.getJSONArray("nodes"));
                         JSONArray submodel = new JSONArray();
                         JSONObject subactor = new JSONObject();
                         submodel = actor.getJSONArray("nodes");
@@ -90,17 +100,22 @@ public class pistartool {
                             subactor = submodel.getJSONObject(j);
                             if(subactor.getString("type").equals("istar.Goal")){
                                 Nodes.add(new NodeGoal(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeGoal(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Task")){
                                 Nodes.add(new NodeTask(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeTask(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Quality")){
                                 Nodes.add(new NodeQuality(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeQuality(subactor.getString("id"),subactor.getString("text")));
                             }
                             if(subactor.getString("type").equals("istar.Resource")){
                                 Nodes.add(new NodeResource(subactor.getString("id"),subactor.getString("text")));
+                                aux.getNodes().add(new NodeResource(subactor.getString("id"),subactor.getString("text")));
                             }
                         }
+                        Nodes.add(aux);
                     }else{
                         Nodes.add(new Agent(actor.getString("id"),actor.getString("text")));
                     }
@@ -159,16 +174,16 @@ public class pistartool {
                 JSONObject dependencie = new JSONObject();
                 dependencie = dependencies.getJSONObject(i);
                 if(dependencie.get("type").equals("istar.Goal")){
-                    Relations.add(new RelationGoal(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationGoal(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
                 if(dependencie.get("type").equals("istar.Quality")){
-                    Relations.add(new RelationQuality(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationQuality(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
                 if(dependencie.get("type").equals("istar.Resource")){
-                    Relations.add(new RelationResource(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationResource(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
                 if(dependencie.get("type").equals("istar.Task")){
-                    Relations.add(new RelationTask(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target")));
+                    Relations.add(new RelationTask(dependencie.getString("id"),dependencie.getString("source"),dependencie.getString("target"),dependencie.getString("text")));
                 }
 
             }

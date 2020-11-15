@@ -4,10 +4,19 @@ import CommonModel.Relation;
 
 
 public class RelationQuality extends Relation {
+    private String text;
 
+    public String getText() {
+        return text;
+    }
 
-    public RelationQuality(String id, String origin, String target) {
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public RelationQuality(String id, String origin, String target, String text) {
         super(id, origin, target, "Quality");
+        this.text = text;
     }
 
     //Validacion Individual
