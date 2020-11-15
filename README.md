@@ -50,30 +50,35 @@ Y recibira un proyecto vanilla:
 
 ```json
 {
-    "model_AC": {
-        "date": "Mon Sep 21 00:12:49 CLST 2020",
-        "model": {
-            "model": null
-        },
-        "validator": []
-    },
+    "id": "5fb08681341532494a3fc99a",
     "model_i": {
-        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "date": "Sun Nov 15 01:38:09 UTC 2020",
+        "validator": [],
         "model": {
             "actors": [],
             "dependencies": [],
             "links": []
-        },
-        "validator": []
+        }
+    },
+    "model_AC": {
+        "date": "Sun Nov 15 01:38:09 UTC 2020",
+        "validator": [],
+        "model": {
+            "actors": [],
+            "communicativeEvents": [],
+            "specialisedCommunicativeEvents": [],
+            "communicativeInteractions": [],
+            "precedenceRelations": [],
+            "trazability": null
+        }
     },
     "model_OOM": {
-        "date": "Mon Sep 21 00:12:49 CLST 2020",
+        "date": "Sun Nov 15 01:38:09 UTC 2020",
+        "validator": [],
         "model": {
             "model": null
-        },
-        "validator": []
-    },
-    "id": "ID del proyecto"
+        }
+    }
 }
 ```
 # Variables de entornos para configurar
