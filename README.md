@@ -78,15 +78,15 @@ Y recibira un proyecto vanilla:
 ```
 # Variables de entornos para configurar
 
-+ENGINE_NEXT= URL
-+ENGINE_INIT= URL
-+ENGINE_SERVICES= URL
-+ISTAR_VALIDATOR_SERVICES= URL
-+ISTAR_2_AC= URL
-+ACVALIDATER_SERVICES= URL
-+AC_2_OOM= URL
-+OOM_VALIDATER_SERVICES= URL
-+SECRET_KEY= Key para comprobar si el elemento esta validado
++ ENGINE_NEXT= URL
++ ENGINE_INIT= URL
++ ENGINE_SERVICES= URL
++ ISTAR_VALIDATOR_SERVICES= URL
++ ISTAR_2_AC= URL
++ ACVALIDATER_SERVICES= URL
++ AC_2_OOM= URL
++ OOM_VALIDATER_SERVICES= URL
++ SECRET_KEY= Key para comprobar si el elemento esta validado
 
 
 # Elementos Comunes de los modelos
