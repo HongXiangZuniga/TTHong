@@ -1,3 +1,6 @@
+build:
+	sh Components/ManagerServices/build.sh
+
 run:
 	@echo "*** Runs images ***"
 	docker run --network tthong --ip 192.168.2.2 -d -p 8020:8020 gateway

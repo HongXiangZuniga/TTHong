@@ -32,7 +32,7 @@ public class R0 extends Rule{
                 ));
                 AC.getActors().add(new Actor(
                         "A0"+IS.getNodes().get(i).getName(),
-                        "0",
+                        "A0"+IS.getNodes().get(i).getName(),
                         "Registrer " + IS.getNodes().get(i).getName(),
                         "actor")
                 );
