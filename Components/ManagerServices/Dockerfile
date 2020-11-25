@@ -10,6 +10,7 @@ COPY requirements.txt .
 # install dependencies
 RUN pip install Flask
 RUN pip install requests
+RUN pip install python-dotenv
 
 # copy the content of the local src directory to the working directory
 ADD . .
