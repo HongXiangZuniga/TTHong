@@ -1,19 +1,20 @@
 package OOMModel;
 
+import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 
 import java.util.ArrayList;
 
 public class containerOOM {
-    private ArrayList<ArrayList<String>> validator;
+    private JSONArray validator;
     private JSONObject model;
 
 
-    public ArrayList<ArrayList<String>> getValidator() {
+    public JSONArray getValidator() {
         return validator;
     }
 
-    public void setValidator(ArrayList<ArrayList<String>> validator) {
+    public void setValidator(JSONArray validator) {
         this.validator = validator;
     }
 
@@ -24,9 +25,8 @@ public class containerOOM {
     public void setModel(JSONObject model) {
         this.model = model;
     }
-
     public containerOOM() {
-        this.validator = new ArrayList<>();
+        this.validator = new JSONArray();
         this.model = new JSONObject();
     }
 }

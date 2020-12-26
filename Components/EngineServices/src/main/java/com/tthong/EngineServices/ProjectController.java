@@ -2,8 +2,10 @@ package com.tthong.EngineServices;
 
 
 
-import org.json.JSONException;
-import org.json.JSONObject;
+
+import net.minidev.json.JSONObject;
+import net.minidev.json.JSONArray;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.server.EntityLinks;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,7 +36,7 @@ public class ProjectController {
     }
 
     @RequestMapping("/next")
-    public Map<String, String> nextModel(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
+    public Map<String, String> nextModel(@RequestBody final String body) {
        
         
         return null;
@@ -45,13 +47,9 @@ public class ProjectController {
 
 
     @RequestMapping("/model")
-    public Map<String, String> model(@RequestBody final String body) throws JSONException, UnsupportedEncodingException {
+    public Map<String, String> model(@RequestBody final String body) {
         String key = System.getenv("SECRET_KEY");
 
-        
-
-
-        Boolean updateState = true;
    
 
         return null;

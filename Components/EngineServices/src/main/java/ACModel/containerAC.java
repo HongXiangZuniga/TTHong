@@ -1,18 +1,19 @@
 package ACModel;
 
 import net.minidev.json.JSONObject;
+import net.minidev.json.JSONArray;
 import java.util.ArrayList;
 
 public class containerAC {
-    private ArrayList<ArrayList<String>> validator;
+    private JSONArray validator;
     private JSONObject model;
 
 
-    public ArrayList<ArrayList<String>> getValidator() {
+    public JSONArray getValidator() {
         return validator;
     }
 
-    public void setValidator(ArrayList<ArrayList<String>> validator) {
+    public void setValidator(JSONArray validator) {
         this.validator = validator;
     }
 
@@ -25,14 +26,14 @@ public class containerAC {
     }
 
     public containerAC() {
-        this.validator = new ArrayList<>();
+        this.validator = new JSONArray();
         this.model = new JSONObject();
-        JSONObject[] actors = new JSONObject[]{};
-        JSONObject[] communicativeEvents = new JSONObject[]{};
-        JSONObject[] specialisedCommunicativeEvents = new JSONObject[]{};
-        JSONObject[] communicativeInteractions = new JSONObject[]{};
-        JSONObject[] precedenceRelations = new JSONObject[]{};
-        JSONObject[] trazability = new JSONObject[]{};
+        JSONArray actors = new JSONArray();
+        JSONArray communicativeEvents = new JSONArray();
+        JSONArray specialisedCommunicativeEvents =new JSONArray();
+        JSONArray communicativeInteractions = new JSONArray();
+        JSONArray precedenceRelations = new JSONArray();
+        JSONArray trazability = new JSONArray();
 
         this.model.appendField("actors",actors);
         this.model.appendField("communicativeEvents",communicativeEvents);

@@ -1,18 +1,19 @@
 package IModel;
 
+import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import java.util.ArrayList;
 
 public class containerI {
-    private ArrayList<ArrayList<String>> validator;
+    private JSONArray validator;
     private JSONObject model;
 
 
-    public ArrayList<ArrayList<String>> getValidator() {
+    public JSONArray getValidator() {
         return validator;
     }
 
-    public void setValidator(ArrayList<ArrayList<String>> validator) {
+    public void setValidator(JSONArray validator) {
         this.validator = validator;
     }
 
@@ -25,11 +26,11 @@ public class containerI {
     }
 
     public containerI() {
-        this.validator = new ArrayList<>();
+        this.validator = new JSONArray();
         this.model = new JSONObject();
-        JSONObject[] actors = new JSONObject[]{};
-        JSONObject[] dependencies = new JSONObject[]{};
-        JSONObject[] links = new JSONObject[]{};
+        JSONArray actors = new JSONArray();
+        JSONArray dependencies = new JSONArray();
+        JSONArray links =new JSONArray();
         this.model.appendField("actors",actors);
         this.model.appendField("dependencies",dependencies);
         this.model.appendField("links",links);
