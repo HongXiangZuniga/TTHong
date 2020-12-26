@@ -2,12 +2,21 @@ package IModel;
 
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
-import java.util.ArrayList;
+
+import java.time.LocalDate;
 
 public class containerI {
     private JSONArray validator;
     private JSONObject model;
+    private LocalDate lastModification;
 
+    public LocalDate getLastModification() {
+        return lastModification;
+    }
+
+    public void setLastModification(LocalDate lastModification) {
+        this.lastModification = lastModification;
+    }
 
     public JSONArray getValidator() {
         return validator;
@@ -34,5 +43,6 @@ public class containerI {
         this.model.appendField("actors",actors);
         this.model.appendField("dependencies",dependencies);
         this.model.appendField("links",links);
+        this.lastModification= LocalDate.now();
     }
 }

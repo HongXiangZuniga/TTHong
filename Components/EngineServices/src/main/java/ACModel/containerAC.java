@@ -2,12 +2,20 @@ package ACModel;
 
 import net.minidev.json.JSONObject;
 import net.minidev.json.JSONArray;
-import java.util.ArrayList;
+import java.time.LocalDate;
 
 public class containerAC {
     private JSONArray validator;
     private JSONObject model;
+    private LocalDate lastModification;
 
+    public LocalDate getLastModification() {
+        return lastModification;
+    }
+
+    public void setLastModification(LocalDate lastModification) {
+        this.lastModification = lastModification;
+    }
 
     public JSONArray getValidator() {
         return validator;
@@ -41,5 +49,6 @@ public class containerAC {
         this.model.appendField("communicativeInteractions",communicativeInteractions);
         this.model.appendField("precedenceRelations",precedenceRelations);
         this.model.appendField("trazability",trazability);
+        this.lastModification= LocalDate.now();
     }
 }

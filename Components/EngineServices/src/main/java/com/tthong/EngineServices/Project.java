@@ -20,6 +20,13 @@ public class Project {
     private containerAC model_AC;
     private containerOOM model_OOM;
 
+    public String now() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
 
     public void setId(String id) {
         this.id = id;
