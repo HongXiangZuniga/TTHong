@@ -25,36 +25,36 @@ public class ProjectController {
         return project;
     }
     @PostMapping("/next")
-    public Map<String, String> next(@RequestBody final JSONObject body){
+    public Map<String, Boolean> next(@RequestBody final JSONObject body){
         try{
-            HashMap<String, String> map = new HashMap<>();
+            HashMap<String, Boolean> map = new HashMap<>();
             Steps steps = new Steps();
             String id = body.getAsString("id");
             Project project = repository.findByid(id).get(0);
             project.setState(steps.next(project.now()));
             repository.save(project);
-            map.put("status","true");
+            map.put("status",true);
             return map;
         }catch (Exception e){
-            HashMap<String, String > map = new HashMap<>();
-            map.put("status","error");
+            HashMap<String, Boolean > map = new HashMap<>();
+            map.put("status",false);
             return map;
         }
     }
     @PostMapping("/reset")
-    public Map<String, String> reset(@RequestBody final JSONObject body){
+    public Map<String, Boolean> reset(@RequestBody final JSONObject body){
         try{
-            HashMap<String, String> map = new HashMap<>();
+            HashMap<String, Boolean> map = new HashMap<>();
             Steps steps = new Steps();
             String id = body.getAsString("id");
             Project project = repository.findByid(id).get(0);
             project.setState("Vanilla");
             repository.save(project);
-            map.put("status","true");
+            map.put("status",true);
             return map;
         }catch (Exception e){
-            HashMap<String, String > map = new HashMap<>();
-            map.put("status","error");
+            HashMap<String, Boolean > map = new HashMap<>();
+            map.put("status",false);
             return map;
         }
     }
