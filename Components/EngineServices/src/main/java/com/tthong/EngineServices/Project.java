@@ -1,10 +1,14 @@
 package com.tthong.EngineServices;
 
+import ACModel.containerAC;
+import IModel.containerI;
+import OOMModel.containerOOM;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.tthong.IModel.ContainerIStarModel;
-import com.tthong.ACModel.ContainerACModel;
-import com.tthong.OOMModel.ContainerOOMModel;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+
 import org.springframework.data.annotation.Id;
+
+import net.minidev.json.JSONObject;
 
 
 public class Project {
@@ -12,35 +16,47 @@ public class Project {
     @Id
     public String id ;
     private String state;
-    public ContainerIStarModel model_i;
-    public ContainerACModel model_AC;
-    public ContainerOOMModel model_OOM;
+    private containerI model_i;
+    private containerAC model_AC;
+    private containerOOM model_OOM;
 
 
-    public void setState(String state){
-        this.state = state;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String now(){
-        return this.state;
+    public containerI getModel_i() {
+        return model_i;
     }
 
-    public String getId() {
-        return id;
+    public void setModel_i(containerI model_i) {
+        this.model_i = model_i;
+    }
+
+    public containerAC getModel_AC() {
+        return model_AC;
+    }
+
+    public void setModel_AC(containerAC model_AC) {
+        this.model_AC = model_AC;
+    }
+
+    public containerOOM getModel_OOM() {
+        return model_OOM;
+    }
+
+    public void setModel_OOM(containerOOM model_OOM) {
+        this.model_OOM = model_OOM;
     }
 
     @JsonCreator
     public Project() {
         this.state = "Vanilla";
-        this.model_i = new ContainerIStarModel();
-        this.model_AC = new ContainerACModel();
-        this.model_OOM = new ContainerOOMModel();
+        this.model_i = new containerI();
+        this.model_AC = new containerAC();
+        this.model_OOM = new containerOOM();
+
     }
 
-    public Project(String id, ContainerIStarModel IModel,ContainerACModel ACModel,ContainerOOMModel OOModel) {
-        this.id = id;
-        this.model_i = IModel;
-        this.model_AC = ACModel;
-        this.model_OOM = OOModel;
-    }
+
 }
