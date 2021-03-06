@@ -3,6 +3,6 @@ docker run -it --rm \
 --env-file=".env" \
 -p 8023:8023 \
 --network tthong \
---ip 192.168.2.3 \
+--ip 192.168.32.3 \
 -d \
 engineservices

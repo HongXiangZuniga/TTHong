@@ -3,6 +3,6 @@ docker run -it --rm \
 --env-file=".env" \
 -p 8024:8024 \
 --network tthong \
---ip 192.168.2.4 \
+--ip 192.168.32.4 \
 -d \
 ivalidator

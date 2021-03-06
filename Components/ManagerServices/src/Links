@@ -1,9 +1,0 @@
-EngineNext-http://172.17.0.1:8023/Next
-EngineInit-http://172.17.0.1:8023/init
-EngineServices-http://172.17.0.1:8023/Model
-IStarValidated-http://172.17.0.1:8024/
-IStar2AC-http://172.17.0.1:8025/
-ACValidated-http://172.17.0.1:8026/
-AC2OOM-http://172.17.0.1:8027/
-OOMValidated-http://172.17.0.1:8028/
-Finish-Finish

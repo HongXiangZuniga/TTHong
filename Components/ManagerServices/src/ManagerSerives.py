@@ -38,6 +38,7 @@ def main():
         #Se entrega el contenido
         return content
     except ValueError:
+        print(ValueError)
         return ValueError
 
 

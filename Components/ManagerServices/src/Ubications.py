@@ -20,7 +20,6 @@ def links():
     dict.update(agregar)
     agregar={"Finish":"Finish"}
     dict.update(agregar)
-    print(dict)
     return dict
 
 
